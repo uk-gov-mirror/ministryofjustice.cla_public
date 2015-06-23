@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html ng-app="glyptotheque">
+  <head>
+    <meta charset="utf-8" />
+    <title> Form errors ›  FORMS  › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/cla.css" rel="stylesheet" type="text/css" /><link href="../assets/styles/glyptotheque.css" rel="stylesheet" type="text/css" /><link href="../assets/styles/app.css" rel="stylesheet" type="text/css" /><script src="../assets/scripts/head-js.js" type="text/javascript"></script>
+  </head>
+  <body class="section-forms"><script>
+  // If necessary insert a placeholder before the real menu is created
+  if(!store.get('glypto-menu-hidden')) {
+    var e = document.createElement('div');
+    e.id = 'glypto-nav-placeholder';
+    document.body.insertBefore(e, document.body.childNodes[0]);
+  }
+</script>
+<glypto-menu></glypto-menu>
+<script id="glyptotheque/menu.html" type="text/ng-template">
+  <nav class="glypto-nav" ng-class="{'s-hidden' : navIsHidden}">
+    <button class="glypto-nav-toggle" ng-click="toggle()" title="Toggle menu: Command + Shift + E"></button><a class="_logo" href="../">CLA Styleguide</a>
+    <div class="search">
+      <input class="mousetrap" glypto-search="" ng-model="search" placeholder="Filter (/ to focus)" type="search" />
+    </div>
+    <glypto-menu-tree filter="search" items="items"></glypto-menu-tree>
+  </nav>
+</script>
+<script id="glyptotheque/menu-tree.html" type="text/ng-template">
+  <ul>
+    <glypto-menu-node ng-repeat="node in items|filter:filter"></glypto-menu-node>
+  </ul>
+</script>
+<script id="glyptotheque/menu-node.html" type="text/ng-template">
+  <li ng-class="{'_index': node.children, 's-selected': isSelected}"><a href="{{node.path}}">
+        {{node.title}}<span class="_count" ng-if="node.children.length">{{node.children.length}}</span></a>
+  </li>
+</script><main class="glyptotheque">
+  <header class="glypto-header">
+    <div class="glypto-container">
+      <div class="glypto-breadcrumbs">
+        <a href="../">CLA Styleguide</a> <span class='sep'>›</span> <a href="./">FORMS</a>
+      </div>
+      <h1 class="glypto-title">
+        Form errors
+      </h1>
+      <div class="glypto-source fa fa-github">
+        <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide" target="_blank">Repo</a> • <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide/styleguide/source/forms/errors.html.slim" target="_blank">Page source</a>
+      </div>
+    </div>
+  </header>
+  <div class="glypto-container"><h3>
+  Form error summary
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="alert alert-error" role="alert">
+        <span class="icon icon-cross" aria-hidden="true"></span>
+        <div class="alert-message">
+          <p>This form has errors.</p>
+          <p>Please see below for the errors you need to correct.</p>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="errors-a-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-error"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-cross"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert-message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This form has errors.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Please see below for the errors you need to correct.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.alert</span><span class="_class">.alert-error</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">role</span>="<span class="_value" title="">alert</span>"</span> </span> <div class="_element">
+            <span class="_name">span</span><span class="_classes"><span class="_class">.icon</span><span class="_class">.icon-cross</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">aria-hidden</span>="<span class="_value" title="">true</span>"</span> </span> 
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.alert-message</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="">This form has errors.</span> 
+            </div><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="Please see below for the errors you need to correct.">Please see below for the errors you need to correct.</span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<h3>
+  Form field errors
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <fieldset class="form-group m-error" id="field-own_property">
+        <legend class="fieldset-label m-error" id="field-label-own_property">
+          <span>Do you own any property?</span>
+        </legend>
+        <div class="form-row field-error">
+          <p>Please choose Yes or No</p>
+        </div>
+        <div class="form-row field-help">
+          <span class="field-description">For example, a house, static caravan or flat</span>
+        </div>
+        <div class="form-row">
+          <label class="radio-inline" for="own_property-0">
+            <input id="own_property-0" name="own_property" type="radio" value="1">
+            Yes
+          </label>
+          <label class="radio-inline" for="own_property-1">
+            <input id="own_property-1" name="own_property" type="radio" value="0">
+            No
+          </label>
+        </div>
+      </fieldset>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="errors-b-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group m-error"</span> <span class="na">id=</span><span class="s">"field-own_property"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"fieldset-label m-error"</span> <span class="na">id=</span><span class="s">"field-label-own_property"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Do you own any property?<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/legend&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-error"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Please choose Yes or No<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-help"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"field-description"</span><span class="nt">&gt;</span>For example, a house, static caravan or flat<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"own_property-0"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"own_property-0"</span> <span class="na">name=</span><span class="s">"own_property"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+      Yes
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"own_property-1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"own_property-1"</span> <span class="na">name=</span><span class="s">"own_property"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+      No
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">fieldset</span><span class="_id">#field-own_property</span><span class="_classes"><span class="_class">.form-group</span><span class="_class">.m-error</span></span><div class="_element">
+            <span class="_name">legend</span><span class="_id">#field-label-own_property</span><span class="_classes"><span class="_class">.fieldset-label</span><span class="_class">.m-error</span></span><div class="_element">
+              <span class="_name">span</span> <span class="_text" title="">Do you own any property?</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-error</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="">Please choose Yes or No</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-help</span></span><div class="_element">
+              <span class="_name">span</span><span class="_classes"><span class="_class">.field-description</span></span> <span class="_text" title="For example, a house, static caravan or flat">For example, a house, static caravan or flat</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span></span><div class="_element">
+              <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">own_property-0</span>"</span> </span>  <span class="_text" title="">
+                  
+                  Yes
+                </span> <div class="_element">
+                <span class="_name">input</span><span class="_id">#own_property-0</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">own_property</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">1</span>"</span> </span> 
+              </div>
+            </div><div class="_element">
+              <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">own_property-1</span>"</span> </span>  <span class="_text" title="">
+                  
+                  No
+                </span> <div class="_element">
+                <span class="_name">input</span><span class="_id">#own_property-1</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">own_property</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">0</span>"</span> </span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+  </div>
+</main>
+<script>
+  APP_CONTEXT = {
+    sitemap: [{"path":"../alerts.html","url":"/alerts.html","parent":"/","title":"Alerts","tags":null},{"path":"../confirmation.html","url":"/confirmation.html","parent":"/","title":"Confirmation","tags":null},{"path":"../flash-messages.html","url":"/flash-messages.html","parent":"/","title":"Flash messages","tags":null},{"path":"./","url":"/forms/","children":[{"path":"block-label.html","url":"/forms/block-label.html","title":"Block label","tags":null},{"path":"errors.html","url":"/forms/errors.html","title":"Form errors","tags":null},{"path":"subfield.html","url":"/forms/subfield.html","title":"Form subfields","tags":null}],"parent":"/","title":"FORMS","tags":null},{"path":"../progress-sidebar.html","url":"/progress-sidebar.html","parent":"/","title":"Progress Sidebar","tags":null},{"path":"../scope-diagnosis.html","url":"/scope-diagnosis.html","parent":"/","title":"Scope Diagnosis","tags":null}],
+    current_url: "/forms/errors.html"
+  }
+</script>
+    <script src="../scripts/cla.js" type="text/javascript"></script><script src="../assets/scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

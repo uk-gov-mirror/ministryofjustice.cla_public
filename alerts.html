@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="glyptotheque">
+  <head>
+    <meta charset="utf-8" />
+    <title> Alerts › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/cla.css" rel="stylesheet" type="text/css" /><link href="assets/styles/glyptotheque.css" rel="stylesheet" type="text/css" /><link href="assets/styles/app.css" rel="stylesheet" type="text/css" /><script src="assets/scripts/head-js.js" type="text/javascript"></script>
+  </head>
+  <body class="section--"><script>
+  // If necessary insert a placeholder before the real menu is created
+  if(!store.get('glypto-menu-hidden')) {
+    var e = document.createElement('div');
+    e.id = 'glypto-nav-placeholder';
+    document.body.insertBefore(e, document.body.childNodes[0]);
+  }
+</script>
+<glypto-menu></glypto-menu>
+<script id="glyptotheque/menu.html" type="text/ng-template">
+  <nav class="glypto-nav" ng-class="{'s-hidden' : navIsHidden}">
+    <button class="glypto-nav-toggle" ng-click="toggle()" title="Toggle menu: Command + Shift + E"></button><a class="_logo" href="./">CLA Styleguide</a>
+    <div class="search">
+      <input class="mousetrap" glypto-search="" ng-model="search" placeholder="Filter (/ to focus)" type="search" />
+    </div>
+    <glypto-menu-tree filter="search" items="items"></glypto-menu-tree>
+  </nav>
+</script>
+<script id="glyptotheque/menu-tree.html" type="text/ng-template">
+  <ul>
+    <glypto-menu-node ng-repeat="node in items|filter:filter"></glypto-menu-node>
+  </ul>
+</script>
+<script id="glyptotheque/menu-node.html" type="text/ng-template">
+  <li ng-class="{'_index': node.children, 's-selected': isSelected}"><a href="{{node.path}}">
+        {{node.title}}<span class="_count" ng-if="node.children.length">{{node.children.length}}</span></a>
+  </li>
+</script><main class="glyptotheque">
+  <header class="glypto-header">
+    <div class="glypto-container">
+      <div class="glypto-breadcrumbs">
+        <a href="./">CLA Styleguide</a>
+      </div>
+      <h1 class="glypto-title">
+        Alerts
+      </h1>
+      <div class="glypto-source fa fa-github">
+        <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide" target="_blank">Repo</a> • <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide/styleguide/source/alerts.html.slim" target="_blank">Page source</a>
+      </div>
+    </div>
+  </header>
+  <div class="glypto-container"><h3>
+  Alert info
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="alert alert-info" role="alert">
+        <div class="alert-message">
+          <p>
+            If you’re having trouble completing this form,
+            <a href="/reasons-for-contacting" id="callback-link">get in touch</a>.
+          </p>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="alerts-info-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-info"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert-message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      If you’re having trouble completing this form,
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/reasons-for-contacting"</span> <span class="na">id=</span><span class="s">"callback-link"</span><span class="nt">&gt;</span>get in touch<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.alert</span><span class="_class">.alert-info</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">role</span>="<span class="_value" title="">alert</span>"</span> </span> <div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.alert-message</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="If you’re having trouble completing this form,
+                  .">
+                  If you’re having trouble completing this form,
+                  .
+                </span> <div class="_element">
+                <span class="_name">a</span><span class="_id">#callback-link</span> <span class="_attributes"> <span class="_attr"><span class="_name">href</span>="<span class="_value" title="">/reasons-for-contacting</span>"</span> </span>  <span class="_text" title="">get in touch</span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<h3>
+  Alert error
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="alert alert-error" role="alert">
+        <span class="icon icon-cross" aria-hidden="true"></span>
+        <div class="alert-message">
+          <p>
+            This alert requires your attention.
+          </p>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="alerts-error-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-error"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-cross"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert-message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      This alert requires your attention.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.alert</span><span class="_class">.alert-error</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">role</span>="<span class="_value" title="">alert</span>"</span> </span> <div class="_element">
+            <span class="_name">span</span><span class="_classes"><span class="_class">.icon</span><span class="_class">.icon-cross</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">aria-hidden</span>="<span class="_value" title="">true</span>"</span> </span> 
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.alert-message</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="This alert requires your attention.">
+                  This alert requires your attention.
+                </span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<h3>
+  Alert with heading
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="alert alert-info" role="alert" aria-labelledby="alert-heading-info">
+        <div class="alert-message">
+          <h3 class="alert-header" id="alert-heading-info">
+            What do you think about this service?
+          </h3>
+          <p>
+            Your feedback will improve this service.
+            Please <a href="https://www.gov.uk/done/check-if-civil-legal-advice-can-help-you">send us your thoughts</a>.
+          </p>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="alerts-with-heading-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-info"</span> <span class="na">role=</span><span class="s">"alert"</span> <span class="na">aria-labelledby=</span><span class="s">"alert-heading-info"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert-message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"alert-header"</span> <span class="na">id=</span><span class="s">"alert-heading-info"</span><span class="nt">&gt;</span>
+      What do you think about this service?
+    <span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Your feedback will improve this service.
+      Please <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.gov.uk/done/check-if-civil-legal-advice-can-help-you"</span><span class="nt">&gt;</span>send us your thoughts<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.alert</span><span class="_class">.alert-info</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">role</span>="<span class="_value" title="">alert</span>"</span>  <span class="_attr"><span class="_name">aria-labelledby</span>="<span class="_value" title="">alert-heading-info</span>"</span> </span> <div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.alert-message</span></span><div class="_element">
+              <span class="_name">h3</span><span class="_id">#alert-heading-info</span><span class="_classes"><span class="_class">.alert-header</span></span> <span class="_text" title="What do you think about this service?">
+                  What do you think about this service?
+                </span> 
+            </div><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="Your feedback will improve this service.
+                  Please .">
+                  Your feedback will improve this service.
+                  Please .
+                </span> <div class="_element">
+                <span class="_name">a</span> <span class="_attributes"> <span class="_attr"><span class="_name">href</span>="<span class="_value" title="https://www.gov.uk/done/check-if-civil-legal-advice-can-help-you">https://www.gov.uk/done/check-if-civil-legal-advice-can-help-you</span>"</span> </span>  <span class="_text" title="">send us your thoughts</span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+  </div>
+</main>
+<script>
+  APP_CONTEXT = {
+    sitemap: [{"path":"alerts.html","url":"/alerts.html","parent":"/","title":"Alerts","tags":null},{"path":"confirmation.html","url":"/confirmation.html","parent":"/","title":"Confirmation","tags":null},{"path":"flash-messages.html","url":"/flash-messages.html","parent":"/","title":"Flash messages","tags":null},{"path":"forms/","url":"/forms/","children":[{"path":"forms/block-label.html","url":"/forms/block-label.html","title":"Block label","tags":null},{"path":"forms/errors.html","url":"/forms/errors.html","title":"Form errors","tags":null},{"path":"forms/subfield.html","url":"/forms/subfield.html","title":"Form subfields","tags":null}],"parent":"/","title":"FORMS","tags":null},{"path":"progress-sidebar.html","url":"/progress-sidebar.html","parent":"/","title":"Progress Sidebar","tags":null},{"path":"scope-diagnosis.html","url":"/scope-diagnosis.html","parent":"/","title":"Scope Diagnosis","tags":null}],
+    current_url: "/alerts.html"
+  }
+</script><script src="assets/scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

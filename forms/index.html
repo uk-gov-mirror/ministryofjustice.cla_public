@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html ng-app="glyptotheque">
+  <head>
+    <meta charset="utf-8" />
+    <title> FORMS › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/cla.css" rel="stylesheet" type="text/css" /><link href="../assets/styles/glyptotheque.css" rel="stylesheet" type="text/css" /><link href="../assets/styles/app.css" rel="stylesheet" type="text/css" /><script src="../assets/scripts/head-js.js" type="text/javascript"></script>
+  </head>
+  <body class="section-forms"><script>
+  // If necessary insert a placeholder before the real menu is created
+  if(!store.get('glypto-menu-hidden')) {
+    var e = document.createElement('div');
+    e.id = 'glypto-nav-placeholder';
+    document.body.insertBefore(e, document.body.childNodes[0]);
+  }
+</script>
+<glypto-menu></glypto-menu>
+<script id="glyptotheque/menu.html" type="text/ng-template">
+  <nav class="glypto-nav" ng-class="{'s-hidden' : navIsHidden}">
+    <button class="glypto-nav-toggle" ng-click="toggle()" title="Toggle menu: Command + Shift + E"></button><a class="_logo" href="../">CLA Styleguide</a>
+    <div class="search">
+      <input class="mousetrap" glypto-search="" ng-model="search" placeholder="Filter (/ to focus)" type="search" />
+    </div>
+    <glypto-menu-tree filter="search" items="items"></glypto-menu-tree>
+  </nav>
+</script>
+<script id="glyptotheque/menu-tree.html" type="text/ng-template">
+  <ul>
+    <glypto-menu-node ng-repeat="node in items|filter:filter"></glypto-menu-node>
+  </ul>
+</script>
+<script id="glyptotheque/menu-node.html" type="text/ng-template">
+  <li ng-class="{'_index': node.children, 's-selected': isSelected}"><a href="{{node.path}}">
+        {{node.title}}<span class="_count" ng-if="node.children.length">{{node.children.length}}</span></a>
+  </li>
+</script><main class="glyptotheque">
+  <header class="glypto-header">
+    <div class="glypto-container">
+      <div class="glypto-breadcrumbs">
+        <a href="../">CLA Styleguide</a>
+      </div>
+      <h1 class="glypto-title">
+        FORMS
+      </h1>
+      <div class="glypto-source fa fa-github">
+        <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide" target="_blank">Repo</a> • <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide/styleguide/source/glyptotheque/directory-index.html.slim" target="_blank">Page source</a>
+      </div>
+    </div>
+  </header>
+  <div class="glypto-container"><div class="glypto-section">
+  <h2 class="glypto-title">
+    <a href="block-label.html">Block label</a>
+  </h2><h3>
+  Expandable block label
+</h3>
+<p>
+  Additional subfield is expanded when a certain option is selected.
+</p><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="js-enabled">
+        <fieldset class="form-group" id="field-have_partner">
+          <legend class="fieldset-label" id="field-label-have_partner">
+            <span>Do you have a partner?</span>
+          </legend>
+          <div class="form-row field-help">
+            <span class="field-description">Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you’re married</span>
+          </div>
+          <div class="form-row">
+            <label class="radio-inline" for="have_partner-0">
+              <input id="have_partner-0" name="have_partner" type="radio" value="1">
+              Yes
+            </label>
+            <label class="radio-inline" for="have_partner-1">
+              <input id="have_partner-1" name="have_partner" type="radio" value="0">
+              No
+            </label>
+            <fieldset class="form-group form-subfield s-hidden" data-controlled-by="have_partner" data-control-value="1" id="field-in_dispute">
+              <legend class="fieldset-label" id="field-label-in_dispute">
+                <span>Are you in a dispute with your partner?</span>
+              </legend>
+              <div class="form-row field-help">
+                <span class="field-description">This means your partner is the opponent in the dispute you need help with, for example a dispute over money or property </span>
+              </div>
+              <div class="form-row">
+                <label class="radio-inline" for="in_dispute-0">
+                    <input id="in_dispute-0" name="in_dispute" type="radio" value="1">
+                    Yes
+                </label>
+                <label class="radio-inline" for="in_dispute-1">
+                    <input id="in_dispute-1" name="in_dispute" type="radio" value="0">
+                    No
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="block-label-a-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"js-enabled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group"</span> <span class="na">id=</span><span class="s">"field-have_partner"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"fieldset-label"</span> <span class="na">id=</span><span class="s">"field-label-have_partner"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>Do you have a partner?<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-help"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"field-description"</span><span class="nt">&gt;</span>Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you’re married<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"have_partner-0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"have_partner-0"</span> <span class="na">name=</span><span class="s">"have_partner"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        Yes
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"have_partner-1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"have_partner-1"</span> <span class="na">name=</span><span class="s">"have_partner"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+        No
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group form-subfield s-hidden"</span> <span class="na">data-controlled-by=</span><span class="s">"have_partner"</span> <span class="na">data-control-value=</span><span class="s">"1"</span> <span class="na">id=</span><span class="s">"field-in_dispute"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"fieldset-label"</span> <span class="na">id=</span><span class="s">"field-label-in_dispute"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span&gt;</span>Are you in a dispute with your partner?<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/legend&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-help"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"field-description"</span><span class="nt">&gt;</span>This means your partner is the opponent in the dispute you need help with, for example a dispute over money or property <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"in_dispute-0"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"in_dispute-0"</span> <span class="na">name=</span><span class="s">"in_dispute"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+              Yes
+          <span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"in_dispute-1"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"in_dispute-1"</span> <span class="na">name=</span><span class="s">"in_dispute"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+              No
+          <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.js-enabled</span></span><div class="_element">
+            <span class="_name">fieldset</span><span class="_id">#field-have_partner</span><span class="_classes"><span class="_class">.form-group</span></span><div class="_element">
+              <span class="_name">legend</span><span class="_id">#field-label-have_partner</span><span class="_classes"><span class="_class">.fieldset-label</span></span><div class="_element">
+                <span class="_name">span</span> <span class="_text" title="">Do you have a partner?</span> 
+              </div>
+            </div><div class="_element">
+              <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-help</span></span><div class="_element">
+                <span class="_name">span</span><span class="_classes"><span class="_class">.field-description</span></span> <span class="_text" title="Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you’re married">Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you’re married</span> 
+              </div>
+            </div><div class="_element">
+              <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span></span><div class="_element">
+                <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">have_partner-0</span>"</span> </span>  <span class="_text" title="Yes">
+                    
+                    Yes
+                  </span> <div class="_element">
+                  <span class="_name">input</span><span class="_id">#have_partner-0</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">have_partner</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">1</span>"</span> </span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">have_partner-1</span>"</span> </span>  <span class="_text" title="">
+                    
+                    No
+                  </span> <div class="_element">
+                  <span class="_name">input</span><span class="_id">#have_partner-1</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">have_partner</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">0</span>"</span> </span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">fieldset</span><span class="_id">#field-in_dispute</span><span class="_classes"><span class="_class">.form-group</span><span class="_class">.form-subfield</span><span class="_class">.s-hidden</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">data-controlled-by</span>="<span class="_value" title="">have_partner</span>"</span>  <span class="_attr"><span class="_name">data-control-value</span>="<span class="_value" title="">1</span>"</span> </span> <div class="_element">
+                  <span class="_name">legend</span><span class="_id">#field-label-in_dispute</span><span class="_classes"><span class="_class">.fieldset-label</span></span><div class="_element">
+                    <span class="_name">span</span> <span class="_text" title="Are you in a dispute with your partner?">Are you in a dispute with your partner?</span> 
+                  </div>
+                </div><div class="_element">
+                  <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-help</span></span><div class="_element">
+                    <span class="_name">span</span><span class="_classes"><span class="_class">.field-description</span></span> <span class="_text" title="This means your partner is the opponent in the dispute you need help with, for example a dispute over money or property">This means your partner is the opponent in the dispute you need help with, for example a dispute over money or property </span> 
+                  </div>
+                </div><div class="_element">
+                  <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span></span><div class="_element">
+                    <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">in_dispute-0</span>"</span> </span>  <span class="_text" title="Yes">
+                          
+                          Yes
+                      </span> <div class="_element">
+                      <span class="_name">input</span><span class="_id">#in_dispute-0</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">in_dispute</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">1</span>"</span> </span> 
+                    </div>
+                  </div><div class="_element">
+                    <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">in_dispute-1</span>"</span> </span>  <span class="_text" title="No">
+                          
+                          No
+                      </span> <div class="_element">
+                      <span class="_name">input</span><span class="_id">#in_dispute-1</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">in_dispute</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">0</span>"</span> </span> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+</div><div class="glypto-section">
+  <h2 class="glypto-title">
+    <a href="errors.html">Form errors</a>
+  </h2><h3>
+  Form error summary
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="alert alert-error" role="alert">
+        <span class="icon icon-cross" aria-hidden="true"></span>
+        <div class="alert-message">
+          <p>This form has errors.</p>
+          <p>Please see below for the errors you need to correct.</p>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="errors-a-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-error"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-cross"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert-message"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This form has errors.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Please see below for the errors you need to correct.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.alert</span><span class="_class">.alert-error</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">role</span>="<span class="_value" title="">alert</span>"</span> </span> <div class="_element">
+            <span class="_name">span</span><span class="_classes"><span class="_class">.icon</span><span class="_class">.icon-cross</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">aria-hidden</span>="<span class="_value" title="">true</span>"</span> </span> 
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.alert-message</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="">This form has errors.</span> 
+            </div><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="Please see below for the errors you need to correct.">Please see below for the errors you need to correct.</span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+<h3>
+  Form field errors
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <fieldset class="form-group m-error" id="field-own_property">
+        <legend class="fieldset-label m-error" id="field-label-own_property">
+          <span>Do you own any property?</span>
+        </legend>
+        <div class="form-row field-error">
+          <p>Please choose Yes or No</p>
+        </div>
+        <div class="form-row field-help">
+          <span class="field-description">For example, a house, static caravan or flat</span>
+        </div>
+        <div class="form-row">
+          <label class="radio-inline" for="own_property-0">
+            <input id="own_property-0" name="own_property" type="radio" value="1">
+            Yes
+          </label>
+          <label class="radio-inline" for="own_property-1">
+            <input id="own_property-1" name="own_property" type="radio" value="0">
+            No
+          </label>
+        </div>
+      </fieldset>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="errors-b-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group m-error"</span> <span class="na">id=</span><span class="s">"field-own_property"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"fieldset-label m-error"</span> <span class="na">id=</span><span class="s">"field-label-own_property"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Do you own any property?<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/legend&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-error"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Please choose Yes or No<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row field-help"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"field-description"</span><span class="nt">&gt;</span>For example, a house, static caravan or flat<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"own_property-0"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"own_property-0"</span> <span class="na">name=</span><span class="s">"own_property"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+      Yes
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"own_property-1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"own_property-1"</span> <span class="na">name=</span><span class="s">"own_property"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+      No
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">fieldset</span><span class="_id">#field-own_property</span><span class="_classes"><span class="_class">.form-group</span><span class="_class">.m-error</span></span><div class="_element">
+            <span class="_name">legend</span><span class="_id">#field-label-own_property</span><span class="_classes"><span class="_class">.fieldset-label</span><span class="_class">.m-error</span></span><div class="_element">
+              <span class="_name">span</span> <span class="_text" title="">Do you own any property?</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-error</span></span><div class="_element">
+              <span class="_name">p</span> <span class="_text" title="">Please choose Yes or No</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span><span class="_class">.field-help</span></span><div class="_element">
+              <span class="_name">span</span><span class="_classes"><span class="_class">.field-description</span></span> <span class="_text" title="For example, a house, static caravan or flat">For example, a house, static caravan or flat</span> 
+            </div>
+          </div><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span></span><div class="_element">
+              <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">own_property-0</span>"</span> </span>  <span class="_text" title="">
+                  
+                  Yes
+                </span> <div class="_element">
+                <span class="_name">input</span><span class="_id">#own_property-0</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">own_property</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">1</span>"</span> </span> 
+              </div>
+            </div><div class="_element">
+              <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">own_property-1</span>"</span> </span>  <span class="_text" title="">
+                  
+                  No
+                </span> <div class="_element">
+                <span class="_name">input</span><span class="_id">#own_property-1</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">own_property</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">0</span>"</span> </span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+</div><div class="glypto-section">
+  <h2 class="glypto-title">
+    <a href="subfield.html">Form subfields</a>
+  </h2><h3>
+  Informational subfield
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div class="js-enabled">
+        <fieldset class="form-group" id="field-have_valuables">
+          <legend class="fieldset-label" id="field-label-have_valuables">
+            <span>Do you have any valuable items worth over £500 each?</span>
+          </legend>
+          <div class="form-row">
+            <label class="radio-inline" for="have_valuables-0">
+                <input id="have_valuables-0" name="have_valuables" type="radio" value="1">
+                Yes
+            </label>
+            <label class="radio-inline" for="have_valuables-1">
+                <input id="have_valuables-1" name="have_valuables" type="radio" value="0">
+                No
+            </label>
+            <div class="form-group form-subfield split-panels">
+                <div class="panel">
+                    <strong>Don’t include</strong>
+                    <ul>
+                        <li>Furniture and appliances</li>
+                        <li>Your TV</li>
+                        <li>Mobile phones, laptops and other devices</li>
+                        <li>Clothing</li>
+                        <li>The vehicle you use every day, unless it is a classic car or luxury vehicle</li>
+                        <li>Equipment or tools you use for your work</li>
+                    </ul>
+                </div>
+                <div class="panel">
+                    <strong>Do include</strong>
+                    <ul>
+                        <li>Jewellery</li>
+                        <li>Art</li>
+                        <li>Antiques</li>
+                        <li>Caravans and other vehicles you don’t use every day</li>
+                        <li>Musical instruments, unless you’re a professional musician</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="subfield-a-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"js-enabled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group"</span> <span class="na">id=</span><span class="s">"field-have_valuables"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"fieldset-label"</span> <span class="na">id=</span><span class="s">"field-label-have_valuables"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span&gt;</span>Do you have any valuable items worth over £500 each?<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"have_valuables-0"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"have_valuables-0"</span> <span class="na">name=</span><span class="s">"have_valuables"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+          Yes
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"radio-inline"</span> <span class="na">for=</span><span class="s">"have_valuables-1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"have_valuables-1"</span> <span class="na">name=</span><span class="s">"have_valuables"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+          No
+      <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group form-subfield split-panels"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;strong&gt;</span>Don’t include<span class="nt">&lt;/strong&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Furniture and appliances<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Your TV<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Mobile phones, laptops and other devices<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Clothing<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>The vehicle you use every day, unless it is a classic car or luxury vehicle<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Equipment or tools you use for your work<span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;strong&gt;</span>Do include<span class="nt">&lt;/strong&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Jewellery<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Art<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Antiques<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Caravans and other vehicles you don’t use every day<span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;li&gt;</span>Musical instruments, unless you’re a professional musician<span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_classes"><span class="_class">.js-enabled</span></span><div class="_element">
+            <span class="_name">fieldset</span><span class="_id">#field-have_valuables</span><span class="_classes"><span class="_class">.form-group</span></span><div class="_element">
+              <span class="_name">legend</span><span class="_id">#field-label-have_valuables</span><span class="_classes"><span class="_class">.fieldset-label</span></span><div class="_element">
+                <span class="_name">span</span> <span class="_text" title="Do you have any valuable items worth over £500 each?">Do you have any valuable items worth over £500 each?</span> 
+              </div>
+            </div><div class="_element">
+              <span class="_name">div</span><span class="_classes"><span class="_class">.form-row</span></span><div class="_element">
+                <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">have_valuables-0</span>"</span> </span>  <span class="_text" title="Yes">
+                      
+                      Yes
+                  </span> <div class="_element">
+                  <span class="_name">input</span><span class="_id">#have_valuables-0</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">have_valuables</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">1</span>"</span> </span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">label</span><span class="_classes"><span class="_class">.radio-inline</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">for</span>="<span class="_value" title="">have_valuables-1</span>"</span> </span>  <span class="_text" title="No">
+                      
+                      No
+                  </span> <div class="_element">
+                  <span class="_name">input</span><span class="_id">#have_valuables-1</span> <span class="_attributes"> <span class="_attr"><span class="_name">name</span>="<span class="_value" title="">have_valuables</span>"</span>  <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">radio</span>"</span>  <span class="_attr"><span class="_name">value</span>="<span class="_value" title="">0</span>"</span> </span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">div</span><span class="_classes"><span class="_class">.form-group</span><span class="_class">.form-subfield</span><span class="_class">.split-panels</span></span><div class="_element">
+                  <span class="_name">div</span><span class="_classes"><span class="_class">.panel</span></span><div class="_element">
+                    <span class="_name">strong</span> <span class="_text" title="">Don’t include</span> 
+                  </div><div class="_element">
+                    <span class="_name">ul</span><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Furniture and appliances</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Your TV</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="Mobile phones, laptops and other devices">Mobile phones, laptops and other devices</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Clothing</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="The vehicle you use every day, unless it is a classic car or luxury vehicle">The vehicle you use every day, unless it is a classic car or luxury vehicle</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="Equipment or tools you use for your work">Equipment or tools you use for your work</span> 
+                    </div>
+                  </div>
+                </div><div class="_element">
+                  <span class="_name">div</span><span class="_classes"><span class="_class">.panel</span></span><div class="_element">
+                    <span class="_name">strong</span> <span class="_text" title="">Do include</span> 
+                  </div><div class="_element">
+                    <span class="_name">ul</span><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Jewellery</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Art</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="">Antiques</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="Caravans and other vehicles you don’t use every day">Caravans and other vehicles you don’t use every day</span> 
+                    </div><div class="_element">
+                      <span class="_name">li</span> <span class="_text" title="Musical instruments, unless you’re a professional musician">Musical instruments, unless you’re a professional musician</span> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+</div>
+  </div>
+</main>
+<script>
+  APP_CONTEXT = {
+    sitemap: [{"path":"../alerts.html","url":"/alerts.html","parent":"/","title":"Alerts","tags":null},{"path":"../confirmation.html","url":"/confirmation.html","parent":"/","title":"Confirmation","tags":null},{"path":"../flash-messages.html","url":"/flash-messages.html","parent":"/","title":"Flash messages","tags":null},{"path":"./","url":"/forms/","children":[{"path":"block-label.html","url":"/forms/block-label.html","title":"Block label","tags":null},{"path":"errors.html","url":"/forms/errors.html","title":"Form errors","tags":null},{"path":"subfield.html","url":"/forms/subfield.html","title":"Form subfields","tags":null}],"parent":"/","title":"FORMS","tags":null},{"path":"../progress-sidebar.html","url":"/progress-sidebar.html","parent":"/","title":"Progress Sidebar","tags":null},{"path":"../scope-diagnosis.html","url":"/scope-diagnosis.html","parent":"/","title":"Scope Diagnosis","tags":null}],
+    current_url: "/forms/"
+  }
+</script>
+    <script src="../scripts/cla.js" type="text/javascript"></script><script src="../assets/scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

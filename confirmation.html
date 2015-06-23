@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html ng-app="glyptotheque">
+  <head>
+    <meta charset="utf-8" />
+    <title> Confirmation › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/cla.css" rel="stylesheet" type="text/css" /><link href="assets/styles/glyptotheque.css" rel="stylesheet" type="text/css" /><link href="assets/styles/app.css" rel="stylesheet" type="text/css" /><script src="assets/scripts/head-js.js" type="text/javascript"></script>
+  </head>
+  <body class="section--"><script>
+  // If necessary insert a placeholder before the real menu is created
+  if(!store.get('glypto-menu-hidden')) {
+    var e = document.createElement('div');
+    e.id = 'glypto-nav-placeholder';
+    document.body.insertBefore(e, document.body.childNodes[0]);
+  }
+</script>
+<glypto-menu></glypto-menu>
+<script id="glyptotheque/menu.html" type="text/ng-template">
+  <nav class="glypto-nav" ng-class="{'s-hidden' : navIsHidden}">
+    <button class="glypto-nav-toggle" ng-click="toggle()" title="Toggle menu: Command + Shift + E"></button><a class="_logo" href="./">CLA Styleguide</a>
+    <div class="search">
+      <input class="mousetrap" glypto-search="" ng-model="search" placeholder="Filter (/ to focus)" type="search" />
+    </div>
+    <glypto-menu-tree filter="search" items="items"></glypto-menu-tree>
+  </nav>
+</script>
+<script id="glyptotheque/menu-tree.html" type="text/ng-template">
+  <ul>
+    <glypto-menu-node ng-repeat="node in items|filter:filter"></glypto-menu-node>
+  </ul>
+</script>
+<script id="glyptotheque/menu-node.html" type="text/ng-template">
+  <li ng-class="{'_index': node.children, 's-selected': isSelected}"><a href="{{node.path}}">
+        {{node.title}}<span class="_count" ng-if="node.children.length">{{node.children.length}}</span></a>
+  </li>
+</script><main class="glyptotheque">
+  <header class="glypto-header">
+    <div class="glypto-container">
+      <div class="glypto-breadcrumbs">
+        <a href="./">CLA Styleguide</a>
+      </div>
+      <h1 class="glypto-title">
+        Confirmation
+      </h1>
+      <div class="glypto-source fa fa-github">
+        <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide" target="_blank">Repo</a> • <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide/styleguide/source/confirmation.html.slim" target="_blank">Page source</a>
+      </div>
+    </div>
+  </header>
+  <div class="glypto-container"><h3>
+  Receipt of case file confirmation block
+</h3><article class="glypto-model">
+  <div class="glypto-model-stage">
+    <figure>
+      <div id="content">
+        <div class="inner-block">
+          <header class="confirmation">
+            <h1>Your details have been submitted</h1>
+            <p>
+              Your reference number is
+              <strong class="confirmation-ref-number">
+                NH-4245-1813
+              </strong>
+            </p>
+            <p class="confirmation-inset">
+              You can now call CLA on <strong>0345 345 4 345</strong>.<br>
+              Please quote your reference number when you call. Find out about
+              <a href="https://www.gov.uk/call-charges" rel="external" target="_blank">call charges</a>.
+            </p>
+            <p class="print-page-button">
+              <button type="button" class="button button-large button-secondary">Print this page</button>
+            </p>
+          </header>
+        </div>
+      </div>
+    </figure>
+  </div><div class="glypto-model-utils">
+  <menu><button class="_tab-toggle" ng-class="{'__active': show == 'outline'}" ng-click="show = show === 'outline' ? null : 'outline'" tabindex="-1">Outline</button><button class="_tab-toggle" ng-class="{'__active': show == 'source'}" ng-click="show = show === 'source' ? null : 'source'" tabindex="-1">HTML source</button><a class="_isolated" target="_blank" title="Isolated version" tabindex="-1" href="confirmation-a-isolated.html"><span>Isolate</span> <i class="fa fa-external-link"></i></a></menu>
+  <div class="_container">
+    <div class="_panel glypto-model-source" ng-class="{'__shown': show == 'source'}"><pre class="codehilite html"><code>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inner-block"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"confirmation"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>Your details have been submitted<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Your reference number is
+        <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">"confirmation-ref-number"</span><span class="nt">&gt;</span>
+          NH-4245-1813
+        <span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"confirmation-inset"</span><span class="nt">&gt;</span>
+        You can now call CLA on <span class="nt">&lt;strong&gt;</span>0345 345 4 345<span class="nt">&lt;/strong&gt;</span>.<span class="nt">&lt;br&gt;</span>
+        Please quote your reference number when you call. Find out about
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.gov.uk/call-charges"</span> <span class="na">rel=</span><span class="s">"external"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>call charges<span class="nt">&lt;/a&gt;</span>.
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"print-page-button"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"button button-large button-secondary"</span><span class="nt">&gt;</span>Print this page<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+
+    </div>
+    <div class="_panel glypto-model-outline" ng-class="{'__shown': show == 'outline'}">
+      <div class="html-outline">
+        <div class="_element">
+          <span class="_name">div</span><span class="_id">#content</span><div class="_element">
+            <span class="_name">div</span><span class="_classes"><span class="_class">.inner-block</span></span><div class="_element">
+              <span class="_name">header</span><span class="_classes"><span class="_class">.confirmation</span></span><div class="_element">
+                <span class="_name">h1</span> <span class="_text" title="Your details have been submitted">Your details have been submitted</span> 
+              </div><div class="_element">
+                <span class="_name">p</span> <span class="_text" title="Your reference number is">
+                          Your reference number is
+                        </span> <div class="_element">
+                  <span class="_name">strong</span><span class="_classes"><span class="_class">.confirmation-ref-number</span></span> <span class="_text" title="NH-4245-1813">
+                      NH-4245-1813
+                    </span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">p</span><span class="_classes"><span class="_class">.confirmation-inset</span></span> <span class="_text" title="You can now call CLA on .
+                      Please quote your reference number when you call. Find out about
+                      .">
+                    You can now call CLA on .
+                    Please quote your reference number when you call. Find out about
+                    .
+                  </span> <div class="_element">
+                  <span class="_name">strong</span> <span class="_text" title="">0345 345 4 345</span> 
+                </div><div class="_element">
+                  <span class="_name">br</span>
+                </div><div class="_element">
+                  <span class="_name">a</span> <span class="_attributes"> <span class="_attr"><span class="_name">href</span>="<span class="_value" title="https://www.gov.uk/call-charges">https://www.gov.uk/call-charges</span>"</span>  <span class="_attr"><span class="_name">rel</span>="<span class="_value" title="">external</span>"</span>  <span class="_attr"><span class="_name">target</span>="<span class="_value" title="">_blank</span>"</span> </span>  <span class="_text" title="">call charges</span> 
+                </div>
+              </div><div class="_element">
+                <span class="_name">p</span><span class="_classes"><span class="_class">.print-page-button</span></span><div class="_element">
+                  <span class="_name">button</span><span class="_classes"><span class="_class">.button</span><span class="_class">.button-large</span><span class="_class">.button-secondary</span></span> <span class="_attributes"> <span class="_attr"><span class="_name">type</span>="<span class="_value" title="">button</span>"</span> </span>  <span class="_text" title="">Print this page</span> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+  </div>
+</main>
+<script>
+  APP_CONTEXT = {
+    sitemap: [{"path":"alerts.html","url":"/alerts.html","parent":"/","title":"Alerts","tags":null},{"path":"confirmation.html","url":"/confirmation.html","parent":"/","title":"Confirmation","tags":null},{"path":"flash-messages.html","url":"/flash-messages.html","parent":"/","title":"Flash messages","tags":null},{"path":"forms/","url":"/forms/","children":[{"path":"forms/block-label.html","url":"/forms/block-label.html","title":"Block label","tags":null},{"path":"forms/errors.html","url":"/forms/errors.html","title":"Form errors","tags":null},{"path":"forms/subfield.html","url":"/forms/subfield.html","title":"Form subfields","tags":null}],"parent":"/","title":"FORMS","tags":null},{"path":"progress-sidebar.html","url":"/progress-sidebar.html","parent":"/","title":"Progress Sidebar","tags":null},{"path":"scope-diagnosis.html","url":"/scope-diagnosis.html","parent":"/","title":"Scope Diagnosis","tags":null}],
+    current_url: "/confirmation.html"
+  }
+</script><script src="assets/scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

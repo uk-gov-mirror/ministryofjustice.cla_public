@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html ng-app="glyptotheque">
+  <head>
+    <meta charset="utf-8" />
+    <title>CLA Styleguide</title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="assets/styles/glyptotheque.css" rel="stylesheet" type="text/css" /><link href="assets/styles/app.css" rel="stylesheet" type="text/css" /><script src="assets/scripts/head-js.js" type="text/javascript"></script>
+  </head>
+  <body class="section--">
+    <script>
+      // If necessary insert a placeholder before the real menu is created
+      if(!store.get('glypto-menu-hidden')) {
+        var e = document.createElement('div');
+        e.id = 'glypto-nav-placeholder';
+        document.body.insertBefore(e, document.body.childNodes[0]);
+      }
+    </script>
+    <glypto-menu></glypto-menu>
+    <script id="glyptotheque/menu.html" type="text/ng-template">
+      <nav class="glypto-nav" ng-class="{'s-hidden' : navIsHidden}">
+        <button class="glypto-nav-toggle" ng-click="toggle()" title="Toggle menu: Command + Shift + E"></button><a class="_logo" href="./">CLA Styleguide</a>
+        <div class="search">
+          <input class="mousetrap" glypto-search="" ng-model="search" placeholder="Filter (/ to focus)" type="search" />
+        </div>
+        <glypto-menu-tree filter="search" items="items"></glypto-menu-tree>
+      </nav>
+    </script>
+    <script id="glyptotheque/menu-tree.html" type="text/ng-template">
+      <ul>
+        <glypto-menu-node ng-repeat="node in items|filter:filter"></glypto-menu-node>
+      </ul>
+    </script>
+    <script id="glyptotheque/menu-node.html" type="text/ng-template">
+      <li ng-class="{'_index': node.children, 's-selected': isSelected}"><a href="{{node.path}}">
+            {{node.title}}<span class="_count" ng-if="node.children.length">{{node.children.length}}</span></a>
+      </li>
+    </script><main class="glyptotheque">
+      <header class="glypto-header">
+        <div class="glypto-container">
+          <h1 class="glypto-title">
+            CLA Styleguide
+          </h1>
+          <div class="glypto-source fa fa-github">
+            <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide" target="_blank">Repo</a> • <a href="https://github.com/ministryofjustice/cla_public/tree/styleguide/styleguide/source/glyptotheque/site-index.html.slim" target="_blank">Page source</a>
+          </div>
+        </div>
+      </header>
+      <div class="glypto-container">
+        <ul class="glypto-section-list">
+          <li class="glypto-section-list-item">
+            <a href="alerts.html">
+                <h2 class="glypto-section-name">
+                  Alerts
+                </h2></a>
+          </li>
+          <li class="glypto-section-list-item">
+            <a href="confirmation.html">
+                <h2 class="glypto-section-name">
+                  Confirmation
+                </h2></a>
+          </li>
+          <li class="glypto-section-list-item">
+            <a href="flash-messages.html">
+                <h2 class="glypto-section-name">
+                  Flash messages
+                </h2></a>
+          </li>
+          <li class="glypto-section-list-item m-folder">
+            <a href="forms/">
+                <h2 class="glypto-section-name">
+                  FORMS
+                </h2>
+                <div class="glypto-section-meta">
+                  3 items
+                </div></a>
+          </li>
+          <li class="glypto-section-list-item">
+            <a href="progress-sidebar.html">
+                <h2 class="glypto-section-name">
+                  Progress Sidebar
+                </h2></a>
+          </li>
+          <li class="glypto-section-list-item">
+            <a href="scope-diagnosis.html">
+                <h2 class="glypto-section-name">
+                  Scope Diagnosis
+                </h2></a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script>
+      APP_CONTEXT = {
+        sitemap: [{"path":"alerts.html","url":"/alerts.html","parent":"/","title":"Alerts","tags":null},{"path":"confirmation.html","url":"/confirmation.html","parent":"/","title":"Confirmation","tags":null},{"path":"flash-messages.html","url":"/flash-messages.html","parent":"/","title":"Flash messages","tags":null},{"path":"forms/","url":"/forms/","children":[{"path":"forms/block-label.html","url":"/forms/block-label.html","title":"Block label","tags":null},{"path":"forms/errors.html","url":"/forms/errors.html","title":"Form errors","tags":null},{"path":"forms/subfield.html","url":"/forms/subfield.html","title":"Form subfields","tags":null}],"parent":"/","title":"FORMS","tags":null},{"path":"progress-sidebar.html","url":"/progress-sidebar.html","parent":"/","title":"Progress Sidebar","tags":null},{"path":"scope-diagnosis.html","url":"/scope-diagnosis.html","parent":"/","title":"Scope Diagnosis","tags":null}],
+        current_url: "/"
+      }
+    </script><script src="assets/scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

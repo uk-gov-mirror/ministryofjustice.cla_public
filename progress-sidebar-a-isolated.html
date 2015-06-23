@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> Progress Sidebar › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="styles/cla.css" rel="stylesheet" type="text/css" />
+    <style>
+      .sidebar { width: 300px; margin: auto }
+      
+    </style>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="progress">
+        <div class="progress-bar">
+          <div class="progress-value m-completed" style="width:14%;"></div>
+          <div class="progress-value m-current" style="left:14%;"></div>
+        </div>
+    
+        <h2>Your progress</h2>
+    
+        <ul class="progress-steps">
+          <li class="progress-step m-completed s-hovered">
+            <a class="step-name" href="#/scope/diagnosis">
+              <span class="step-status">(completed)</span>
+              <span class="step-name-title">What do you need help with?</span>
+              <div class="step-name-subtitle">Debt</div>
+            </a>
+          </li>
+          <li class="progress-step m-completed">
+            <a class="step-name s-hovered" href="#/scope/diagnosis/n43::n2">
+              <span class="step-status">(completed)</span>
+              <span class="step-name-title">Select the option that best describes your situation</span>
+              <div class="step-name-subtitle">You’re living in rented accommodation</div>
+            </a>
+          </li>
+          <li class="progress-step m-current">
+            <a class="step-name s-hovered" href="#">
+              <span class="step-status">(current)</span>
+              <span class="step-name-title">Select the option that best describes your situation</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside><script src="assets/scripts/iframe-js.js" type="text/javascript"></script>
+  </body>
+</html>

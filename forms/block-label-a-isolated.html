@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> Block label ›  FORMS  › CLA Styleguide </title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="../styles/cla.css" rel="stylesheet" type="text/css" />
+    <style>
+      body { margin: 5px 10px } .scope-options-list { max-width: 960px }
+      
+    </style>
+  </head>
+  <body>
+    <div class="js-enabled">
+      <fieldset class="form-group" id="field-have_partner">
+        <legend class="fieldset-label" id="field-label-have_partner">
+          <span>Do you have a partner?</span>
+        </legend>
+        <div class="form-row field-help">
+          <span class="field-description">Your husband, wife, civil partner (unless you have permanently separated) or someone you live with as if you’re married</span>
+        </div>
+        <div class="form-row">
+          <label class="radio-inline" for="have_partner-0">
+            <input id="have_partner-0" name="have_partner" type="radio" value="1">
+            Yes
+          </label>
+          <label class="radio-inline" for="have_partner-1">
+            <input id="have_partner-1" name="have_partner" type="radio" value="0">
+            No
+          </label>
+          <fieldset class="form-group form-subfield s-hidden" data-controlled-by="have_partner" data-control-value="1" id="field-in_dispute">
+            <legend class="fieldset-label" id="field-label-in_dispute">
+              <span>Are you in a dispute with your partner?</span>
+            </legend>
+            <div class="form-row field-help">
+              <span class="field-description">This means your partner is the opponent in the dispute you need help with, for example a dispute over money or property </span>
+            </div>
+            <div class="form-row">
+              <label class="radio-inline" for="in_dispute-0">
+                  <input id="in_dispute-0" name="in_dispute" type="radio" value="1">
+                  Yes
+              </label>
+              <label class="radio-inline" for="in_dispute-1">
+                  <input id="in_dispute-1" name="in_dispute" type="radio" value="0">
+                  No
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+    </div><script src="../assets/scripts/iframe-js.js" type="text/javascript"></script>
+    <script src="../scripts/cla.js" type="text/javascript"></script>
+  </body>
+</html>
