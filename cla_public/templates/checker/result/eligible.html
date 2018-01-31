@@ -13,6 +13,11 @@
       Wales to get specialist advice.{% endtrans %}
     </p>
   {% else %}
+    {% call Element.alert('error') %}
+      <div><strong>Technical problems</strong></div>
+      <p>Civil Legal Advice operators are not currently notified if you request a call back due to technical problems.
+        Please select <b>'I'll call CLA'</b> below and request a call back directly from the operator if required.</p>
+    {% endcall %}
     <p>
       {% trans %}Based on the answers you’ve given today, you might qualify for legal aid.
       Contact Civil Legal Advice (CLA), a national helpline for England and

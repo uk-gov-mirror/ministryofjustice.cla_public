@@ -39,6 +39,12 @@
         on 999.{% endtrans %}
       </p>
     {% else %}
+      {% call Element.alert('error') %}
+        <div><strong>Technical problems</strong></div>
+        <p>Civil Legal Advice operators are not currently notified if you request a call back due to technical problems.
+          Please select <b>'I'll call CLA'</b> below and request a call back directly from the operator if required.</p>
+      {% endcall %}
+
       <p>
         {% trans %}Please submit your details to get in touch with Civil Legal Advice (CLA).{% endtrans %}
       </p>
