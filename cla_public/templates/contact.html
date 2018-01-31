@@ -24,6 +24,11 @@
       to question 'Are you at immediate risk of harm?'
     #}
     {% if 'n18' in session.checker.diagnosis_previous_choices %}
+      {% call Element.alert('error') %}
+        <div><strong>Technical problems</strong></div>
+        <p>Civil Legal Advice operators are not currently notified if you request a call back due to technical problems.
+          Please select <b>'I'll call CLA'</b> below and request a call back directly from the operator if required.</p>
+      {% endcall %}
       <h2 class="subtitle vcard">
         {% trans call_charges_link=Element.link_new_window('https://www.gov.uk/call-charges', _('Call charges apply'), True) %}
           If you’re in immediate danger please call Civil Legal Advice on <span class="tel">0345 345 4 345</span>.
