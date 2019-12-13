@@ -59,7 +59,7 @@
 
         {% set has_contact_details = org.telephone_numbers or org.email %}
         {% if has_contact_details %}
-            <div class="govuk-inset-text org-contact-details">
+          <div class="org-details govuk-inset-text org-contact-details">
               {% if org.telephone_numbers %}
                 <dl>
                   <dt>{{ _('Helpline') }}:</dt>
