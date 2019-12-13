@@ -44,58 +44,49 @@
 #}
 {% import "macros/element.html" as Element %}
 {% macro org_list(organisations, category_name='') %}
-  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <ul class="org-list">
     {% for org in organisations %}
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header">
-          <h3 class="govuk-accordion__section-heading">
-            <span class="govuk-accordion__section-button" id="accordion-default-heading-{{loop.index}}">
-              {{ org.service_name }}
-            </span>
-          </h3>
-        </div>
-        <div id="accordion-default-content-{{loop.index}}" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-          <p class='govuk-body'>
-            {% set ga_event = 'event:%s/%s/%s' % ('External Link Clicked', 'click', org.service_name) %}
-            {{ Element.link_new_window(org.website, "Visit website", is_external=True, **{'class': 'govuk-link', 'data-ga': ga_event}) }}
-          </p>
-           {% if org.public_description %}
-            <div class="org-description">
-              {{ org.public_description|markdown }}
-            </div>
-          {% endif %}
+      <li class="vcard {{ org.classname }}">
+        <h3>
+          {% set ga_event = 'event:%s/%s/%s' % ('External Link Clicked', 'click', org.service_name) %}
+          {{ Element.link_new_window(org.website, org.service_name, is_external=True, **{'class': 'url', 'data-ga': ga_event}) }}
+        </h3>
+        {% if org.public_description %}
+          <div class="org-description">
+            {{ org.public_description|markdown }}
+          </div>
+        {% endif %}
 
-          {% set has_contact_details = org.telephone_numbers or org.email %}
-          {% if has_contact_details %}
-            <div class="govuk-inset-text org-contact-details">
-              {% if org.telephone_numbers %}
-                <dl>
-                  <dt>{{ _('Helpline') }}:</dt>
-                  <dd>
-                    {% for telephone_number in org.telephone_numbers %}
-                      <span class="govuk-!-font-weight-bold">{{ telephone_number.number }}</span>
-                      {%- if telephone_number.name %} ({{ telephone_number.name }}){% endif -%}
-                      {%- if not loop.last %}, {% endif %}
-                    {% endfor %}
-                  </dd>
-                </dl>
-              {% endif %}
-              {% if org.opening_hours %}
-                <dl>
-                  <dt>{{ _('Opening hours') }}:</dt>
-                  <dd class="govuk-!-font-weight-bold">{{ org.opening_hours }}</dd>
-                </dl>
-              {% endif %}
-              {% if org.email %}
-                <dl>
-                  <dt>{{ _('Email') }}:</dt>
-                  <dd class="govuk-!-font-weight-bold">{{ org.email }}</dd>
-                </dl>
-              {% endif %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
+        {% set has_contact_details = org.telephone_numbers or org.email %}
+        {% if has_contact_details %}
+          <div class="org-details">
+            {% if org.telephone_numbers %}
+              <dl>
+                <dt>{{ _('Helpline') }}:</dt>
+                <dd>
+                  {% for telephone_number in org.telephone_numbers %}
+                    <span class="tel">{{ telephone_number.number }}</span>
+                    {%- if telephone_number.name %} ({{ telephone_number.name }}){% endif -%}
+                    {%- if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </dd>
+              </dl>
+            {% endif %}
+            {% if org.opening_hours %}
+              <dl>
+                <dt>{{ _('Opening hours') }}:</dt>
+                <dd>{{ org.opening_hours }}</dd>
+              </dl>
+            {% endif %}
+            {% if org.email %}
+              <dl>
+                <dt>{{ _('Email') }}:</dt>
+                <dd class="email" href="mailto:{{ org.email }}">{{ org.email }}</dd>
+              </dl>
+            {% endif %}
+          </div>
+        {% endif %}
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 {% endmacro %}
