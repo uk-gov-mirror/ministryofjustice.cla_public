@@ -57,7 +57,7 @@
     {% trans %}You can still ask a solicitor for help – you will have to pay for their advice.{% endtrans %}
   </p>
   {% set ga_event = 'event:%s/%s/%s' % ('External Link Clicked', 'click', 'Find a solicitor') %}
-  {{ Element.link_new_window('https://www.gov.uk/find-a-legal-adviser', _('Find a solicitor'), **{'class': 'govuk-button', 'data-ga': ga_event}) }}
+  {{ Element.link_new_window('https://www.gov.uk/find-a-legal-adviser', _('Find a solicitor'), **{'class': 'govuk-link', 'data-ga': ga_event}) }}
 
   <p class="govuk-body">
     <a class="govuk-link" href="https://www.gov.uk/done/check-if-civil-legal-advice-can-help-you" aria-labelledby="aria-satisfaction-survey">
