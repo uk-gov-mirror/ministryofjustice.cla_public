@@ -171,6 +171,8 @@
     <!--<![endif]-->
 
     {% block body_end %}{% endblock %}
-
+    <script src="{{ static('images/javascript/all.js') }}"></script>
+    <script>window.GOVUKFrontend.initAll()</script>
+    
   </body>
 </html>
