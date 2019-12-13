@@ -175,3 +175,13 @@ hr {
     box-shadow: 0 2px 0 $govuk-link-active-colour;
   }
 }
+
+.org-contact-details {
+  dd {
+    display: inline-block;
+  }
+  dt {
+    display: inline-block;
+    margin-right: 0.4em
+  }
+}
