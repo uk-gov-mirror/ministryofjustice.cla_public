@@ -1793,8 +1793,9 @@ msgstr "datganiadau morgais a phrisiad cyfredol ar unrhyw eiddo yr ydych chi’n
 #, python-format
 msgid ""
 "\n"
-"    If you’re under 18, you should <a href=\"%(url)s\">contact CLA</a>\n"
+"    If you’re under 18, you should <a class=\"govuk-link\" href=\"%(url)s\">contact CLA</a>\n"
 "    without completing the financial assessment."
+
 msgstr ""
 "\n"
 "    Os ydych o dan 18 oed, dylech <a href=\"%(url)s\">gysylltu â’r CLA</a>\n"
@@ -3331,6 +3332,10 @@ msgstr ""
 msgid "Legal aid is not usually available for advice about personal injury"
 msgstr "Fel arfer ni fydd cymorth cyfreithiol ar gael ar gyfer cyngor ar anafiadau personol."
 
+#: cla_public/templates/checker/result/face-to-face.html:
+msgid "What happens next"
+msgstr "Beth fydd yn digwydd nesaf"
+
 #: cla_public/templates/checker/result/face-to-face.html:40
 msgid ""
 "You may be able to get legal aid in exceptional cases. You\n"
@@ -3340,6 +3345,12 @@ msgstr ""
 "Efallai y bydd cymorth cyfreithiol yn dal ar gael mewn achosion eithriadol. Gallech chi\n"
 "ofyn am gyngor gan gynghorydd cyfreithiol ynghylch a fydd cais am gymorth cyfreithiol \n"
 "yn debygol o lwyddo yn eich achos chi a sut i wneud cais."
+
+#: cla_public/templates/checker/result/face-to-face.html:53
+msgid "\n"
+"        Your adviser will check whether you qualify for legal aid <strong>at\n"
+"        no cost to you</strong> by asking about your problem and your finances.\n      "
+msgstr "Bydd eich cynghorydd yn gwirio a ydych chi’n gymwys i gael cymorth cyfreithiol am ddim drwy ofyn cwestiynau i chi am eich problem a’ch amgylchiadau ariannol."
 
 #: cla_public/templates/checker/result/face-to-face.html:53
 msgid ""
