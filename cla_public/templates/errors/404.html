@@ -5,9 +5,7 @@
 {% block error_class %}gds-header__error{% endblock %}
 
 {% block inner_content %}
-<main id="content" role="main" class="govuk-grid-column-two-thirds ">
-
-  <header class="page-header">
+<header class="page-header">
     <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
   <h1 class="gem-c-title__text ">
     Check if you can get legal aid
@@ -17,7 +15,7 @@
   <div class="article-container group">
 
     <div class="content-block">
-      <div class="inner">
+      <div class="inner" style="padding-left:0;">
         
   <section class="intro">
     <div class="get-started-intro">
@@ -29,7 +27,7 @@
 <p>You’ll be asked general questions about your legal problem and your income and savings. You’ll be told where you can get legal advice.</p>
 
 <div role="note" aria-label="Information" class="application-notice info-notice">
-<p>This guide is also available <a href="/gwirio-os-ydych-yn-gymwys-i-gael-cymorth-cyfreithiol">in Welsh (Cymraeg)</a>.</p>
+<p>This guide is also available in Welsh (Cymraeg).</p>
 </div>
 
 
@@ -39,7 +37,7 @@
       
 
 
-  <a class="gem-c-button govuk-button govuk-button--start" role="button" rel="external" href="https://checklegalaid.service.gov.uk/start?locale=en_GB">  Start now
+  <a class="gem-c-button govuk-button govuk-button--start" role="button" rel="external" href="/start">  Start now
   <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
     <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
   </svg>
@@ -77,7 +75,6 @@
     </div>
     
   </div>
-</main>
 {% endblock %}
 
 {% block javascripts %}{% endblock %}
