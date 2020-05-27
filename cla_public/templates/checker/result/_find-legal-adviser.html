@@ -213,7 +213,7 @@
   <h2 class="govuk-heading-m">{{ find_legal_advisor_subtitle }}</h2>
 {% endif %}
 
-<form method="GET">
+<form method="GET" action="https://find-legal-advice.justice.gov.uk/">
   {% if postcode_error == true %}
     {{ Form.postcode_input(form.postcode, custom_error=_('Postcode not found')) }}
   {% elif error_text %}
@@ -222,15 +222,17 @@
     {{ Form.postcode_input(form.postcode) }}
   {% endif %}
   {% if category %}
-    <div class="govuk-form-group ">
-      <input class="govuk-input govuk-input--width-10 " id="category" type="hidden" name="category" value="{{ category }}" />
+    {% if category == "clinneg"%}
+      {% set catcode = "med" %}
+    {% endif %}
+    <div class="govuk-form-group">
+      <input class="govuk-input govuk-input--width-10" id="postcode" type="hidden" name="categories" value="{{ catcode }}" />
     </div>
   {% endif %}
   <button class="govuk-button" type="submit">
     {{ _('Search') }}
   </button>
 </form>
-
 
 <script>
   window.LABELS = {
