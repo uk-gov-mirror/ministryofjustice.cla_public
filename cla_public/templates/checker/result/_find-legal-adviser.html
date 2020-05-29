@@ -222,8 +222,20 @@
     {{ Form.postcode_input(form.postcode) }}
   {% endif %}
   {% if category %}
-    {% if category == "clinneg"%}
+    {% if category == "clinneg" %}
       {% set catcode = "med" %}
+    {% elif category == "commcare" %}
+      {% set catcode = "com" %}
+    {% elif category == "mentalhealth" %}
+      {% set catcode = "com" %}
+    {% elif category == "pi" %}
+      {% set catcode = "com" %}
+    {% elif category == "publiclaw" %}
+      {% set catcode = "com" %}
+    {% elif category == "aap" %}
+      {% set catcode = "com" %}
+    {% elif category == "other" %}
+      {% set catcode = "com" %}
     {% endif %}
     <div class="govuk-form-group">
       <input class="govuk-input govuk-input--width-10" id="postcode" type="hidden" name="categories" value="{{ catcode }}" />
