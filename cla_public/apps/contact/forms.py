@@ -9,7 +9,7 @@ from wtforms import Form as NoCsrfForm
 from wtforms import BooleanField, RadioField, SelectField, StringField, TextAreaField
 from wtforms.validators import InputRequired, Optional, Required, Length
 
-from cla_common.constants import ADAPTATION_LANGUAGES, THIRDPARTY_RELATIONSHIP
+from cla_common.constants import ADAPTATION_LANGUAGES
 from cla_public.apps.contact.fields import AvailabilityCheckerField, ValidatedFormField
 from cla_public.apps.checker.constants import SAFE_TO_CONTACT, CONTACT_PREFERENCE
 from cla_public.apps.base.forms import BabelTranslationsFormMixin
@@ -23,7 +23,17 @@ LANG_CHOICES = filter(
     lambda x: x[0] not in ("ENGLISH", "WELSH"), [("", _("-- Choose a language --"))] + ADAPTATION_LANGUAGES
 )
 
-THIRDPARTY_RELATIONSHIP = map(lambda relationship: (relationship[0], _(relationship[1])), THIRDPARTY_RELATIONSHIP)
+THIRDPARTY_RELATIONSHIP_LOCAL = [
+    ("PARENT_GUARDIAN", _("Parent or guardian")),
+    ("FAMILY_FRIEND", _("Family member or friend")),
+    ("PROFESSIONAL", _("Professional")),
+    ("LEGAL_ADVISOR", _("Legal adviser")),
+    ("OTHER", _("Other")),
+]
+
+THIRDPARTY_RELATIONSHIP = map(
+    lambda relationship: (relationship[0], _(relationship[1])), THIRDPARTY_RELATIONSHIP_LOCAL
+)
 THIRDPARTY_RELATIONSHIP_CHOICES = [("", _("-- Please select --"))] + THIRDPARTY_RELATIONSHIP
 
 

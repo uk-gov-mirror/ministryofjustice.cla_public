@@ -4031,3 +4031,17 @@ msgstr "Dewch o hyd i’ch cyfryngwr lleol"
 #~ msgstr "Mynd yn ôl i newid ateb"
 
 
+msgid "Parent or guardian"
+msgstr "WWW"
+
+msgid "Family member or friend"
+msgstr "XXX"
+
+msgid "Professional"
+msgstr "YYY"
+
+msgid "Legal adviser"
+msgstr "ZZZ"
+
+msgid "Other"
+msgstr "ÆÆÆ"

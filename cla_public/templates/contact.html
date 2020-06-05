@@ -134,6 +134,23 @@
     </script>
   {%- endif -%}
 
+  <script>
+    if ("_('Monday')" != "Monday") {
+      $("option").text(function () {
+          return $(this).text()
+            .replace("Monday", "{{_('Monday')}}")
+            .replace("Tuesday", "{{_('Tuesday')}}")
+            .replace("Wednesday", "{{_('Wednesday')}}")
+            .replace("Thursday", "{{_('Thursday')}}")
+            .replace("Friday", "{{_('Friday')}}")
+            .replace("Saturday", "{{_('Saturday')}}")
+            .replace("Sunday", "{{_('Sunday')}}")
+            ;
+      });
+    }
+  </script>
+
+
   <script type="text/html" id="addressFinderButton">
     <button class="govuk-button govuk-button--secondary address-finder-button" type="button" data-module="govuk-button">
       {{ _('Find UK address') }}
