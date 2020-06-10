@@ -134,8 +134,8 @@
     </script>
   {%- endif -%}
 
-  <script>
-    if ("_('Monday')" != "Monday") {
+  {% if request.cookies.get('locale') == 'cy_GB' %}
+    <script>
       $("option").text(function () {
           return $(this).text()
             .replace("Monday", "{{_('Monday')}}")
@@ -145,50 +145,52 @@
             .replace("Friday", "{{_('Friday')}}")
             .replace("Saturday", "{{_('Saturday')}}")
             .replace("Sunday", "{{_('Sunday')}}")
-            .replace("1st", "{{_('1st')}}")
-            .replace("2nd", "{{_('2nd')}}")
-            .replace("3rd", "{{_('3rd')}}")
-            .replace("4th", "{{_('4th')}}")
-            .replace("5th", "{{_('5th')}}")
-            .replace("6th", "{{_('6th')}}")
-            .replace("7th", "{{_('7th')}}")
-            .replace("8th", "{{_('8th')}}")
-            .replace("9th", "{{_('9th')}}")
-            .replace("10th", "{{_('10th')}}")
-            .replace("11th", "{{_('11th')}}")
-            .replace("12th", "{{_('12th')}}")
-            .replace("13th", "{{_('13th')}}")
-            .replace("14th", "{{_('14th')}}")
-            .replace("15th", "{{_('15th')}}")
-            .replace("16th", "{{_('16th')}}")
-            .replace("17th", "{{_('17th')}}")
-            .replace("18th", "{{_('18th')}}")
-            .replace("19th", "{{_('19th')}}")
-            .replace("20th", "{{_('20th')}}")
-            .replace("21st", "{{_('21st')}}")
-            .replace("22nd", "{{_('22nd')}}")
-            .replace("23rd", "{{_('23rd')}}")
-            .replace("24th", "{{_('24th')}}")
-            .replace("25th", "{{_('25th')}}")
-            .replace("26th", "{{_('26th')}}")
-            .replace("27th", "{{_('27th')}}")
-            .replace("28th", "{{_('28th')}}")
-            .replace("29th", "{{_('29th')}}")
-            .replace("30th", "{{_('30th')}}")
-            .replace("31st", "{{_('31st')}}")
+            .replace(" 1st", " {{_('1st')}}")
+            .replace(" 2nd", " {{_('2nd')}}")
+            .replace(" 3rd", " {{_('3rd')}}")
+            .replace(" 4th", " {{_('4th')}}")
+            .replace(" 5th", " {{_('5th')}}")
+            .replace(" 6th", " {{_('6th')}}")
+            .replace(" 7th", " {{_('7th')}}")
+            .replace(" 8th", " {{_('8th')}}")
+            .replace(" 9th", " {{_('9th')}}")
+            .replace(" 10th", " {{_('10th')}}")
+            .replace(" 11th", " {{_('11th')}}")
+            .replace(" 12th", " {{_('12th')}}")
+            .replace(" 13th", " {{_('13th')}}")
+            .replace(" 14th", " {{_('14th')}}")
+            .replace(" 15th", " {{_('15th')}}")
+            .replace(" 16th", " {{_('16th')}}")
+            .replace(" 17th", " {{_('17th')}}")
+            .replace(" 18th", " {{_('18th')}}")
+            .replace(" 19th", " {{_('19th')}}")
+            .replace(" 20th", " {{_('20th')}}")
+            .replace(" 21st", " {{_('21st')}}")
+            .replace(" 22nd", " {{_('22nd')}}")
+            .replace(" 23rd", " {{_('23rd')}}")
+            .replace(" 24th", " {{_('24th')}}")
+            .replace(" 25th", " {{_('25th')}}")
+            .replace(" 26th", " {{_('26th')}}")
+            .replace(" 27th", " {{_('27th')}}")
+            .replace(" 28th", " {{_('28th')}}")
+            .replace(" 29th", " {{_('29th')}}")
+            .replace(" 30th", " {{_('30th')}}")
+            .replace(" 31st", " {{_('31st')}}")
+            .replace(" AM", " {{_('AM')}}")
             .replace(" AM", " {{_('AM')}}")
             ;
       });
       $("option").text(function () {
-          if ($(this).val() < 1730) {
-            return $(this).text().replace(" PM"," {{_('PM (afternoon)')}}")
-          } else if ($(this).val() > 1730) {
-            return $(this).text().replace(" PM"," {{_('PM (evening)')}}")
-          } else {
-            return $(this).text().replace("5:30 PM","5:30 {{_('PM (afternoon)')}}").replace("6:00 PM","6:00 {{_('PM (evening)')}}")
-          }
-    }
-  </script>
+        if ($(this).val() < 1730) {
+          return $(this).text().replace(" PM"," {{_('PM (afternoon)')}}").replace(" PM"," {{_('PM (afternoon)')}}")
+        } else if ($(this).val() > 1730) {
+          return $(this).text().replace(" PM"," {{_('PM (evening)')}}").replace(" PM"," {{_('PM (evening)')}}")
+        } else {
+          return $(this).text().replace("5:30 PM","5:30 {{_('PM (afternoon)')}}").replace("6:00 PM","6:00 {{_('PM (evening)')}}")
+        }
+      });
+    </script>
+  {% endif %}
 
 
   <script type="text/html" id="addressFinderButton">
