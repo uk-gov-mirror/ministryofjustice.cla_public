@@ -3744,6 +3744,144 @@ msgstr "Chwiliwch am gyfryngwr teulu yn eich ardal chi i ganfod a ydych yn gymwy
 msgid "Find your local mediator"
 msgstr "Dewch o hyd i’ch cyfryngwr lleol"
 
+msgid "AM"
+msgstr "yb"
+
+msgid "PM (afternoon)"
+msgstr "yp"
+
+msgid "PM (evening)"
+msgstr "yh"
+
+msgid "Monday"
+msgstr "Dydd Llun"
+
+msgid "Tuesday"
+msgstr "Dydd Mawrth"
+
+msgid "Wednesday"
+msgstr "Dydd Mercher"
+
+msgid "Thursday"
+msgstr "Dydd Iau"
+
+msgid "Friday"
+msgstr "Dydd Gwener"
+
+msgid "Saturday"
+msgstr "Dydd Sadwrn"
+
+msgid "Sunday"
+msgstr "Dydd Sul"
+
+msgid "Parent or guardian"
+msgstr "Rhiant neu warcheidwad"
+
+msgid "Family member or friend"
+msgstr "Aelod o’ch teulu neu ffrind"
+
+msgid "Professional"
+msgstr "Gweithiwr proffesiynol"
+
+msgid "Legal adviser"
+msgstr "Cynghorydd cyfreithiol"
+
+msgid "Other"
+msgstr "Arall"
+
+msgid "1st"
+msgstr "1af"
+
+msgid "2nd"
+msgstr "2il"
+
+msgid "3rd"
+msgstr "3ydd"
+
+msgid "4th"
+msgstr "4ydd"
+
+msgid "5th"
+msgstr "5ed"
+
+msgid "6th"
+msgstr "6ed"
+
+msgid "7th"
+msgstr "7fed"
+
+msgid "8th"
+msgstr "8fed"
+
+msgid "9th"
+msgstr "9fed"
+
+msgid "10th"
+msgstr "10fed"
+
+msgid "11th"
+msgstr "11eg"
+
+msgid "12th"
+msgstr "12fed"
+
+msgid "13th"
+msgstr "13eg"
+
+msgid "14th"
+msgstr "14eg"
+
+msgid "15th"
+msgstr "15fed"
+
+msgid "16th"
+msgstr "16eg"
+
+msgid "17th"
+msgstr "17eg"
+
+msgid "18th"
+msgstr "18fed"
+
+msgid "19th"
+msgstr "19eg"
+
+msgid "20th"
+msgstr "20fed"
+
+msgid "21st"
+msgstr "21ain"
+
+msgid "22nd"
+msgstr "22ain"
+
+msgid "23rd"
+msgstr "23ain"
+
+msgid "24th"
+msgstr "24ain"
+
+msgid "25th"
+msgstr "25ain"
+
+msgid "26th"
+msgstr "26ain"
+
+msgid "27th"
+msgstr "27ain"
+
+msgid "28th"
+msgstr "28ain"
+
+msgid "29th"
+msgstr "29ain"
+
+msgid "30th"
+msgstr "30ain"
+
+msgid "31st"
+msgstr "31ain"
+
 #~ msgid "Overall, how did you feel about the service you received today?"
 #~ msgstr "Ar y cyfan, sut oeddech yn teimlo ynghylch y gwasanaeth a gawsoch heddiw?"
 
@@ -4030,132 +4168,3 @@ msgstr "Dewch o hyd i’ch cyfryngwr lleol"
 #~ msgid "Go back and change answer"
 #~ msgstr "Mynd yn ôl i newid ateb"
 
-
-msgid "Monday"
-msgstr "Dydd Llun"
-
-msgid "Tuesday"
-msgstr "Dydd Mawrth"
-
-msgid "Wednesday"
-msgstr "Dydd Mercher"
-
-msgid "Thursday"
-msgstr "Dydd Iau"
-
-msgid "Friday"
-msgstr "Dydd Gwener"
-
-msgid "Saturday"
-msgstr "Dydd Sadwrn"
-
-msgid "Sunday"
-msgstr "Dydd Sul"
-
-msgid "Parent or guardian"
-msgstr "Rhiant neu warcheidwad"
-
-msgid "Family member or friend"
-msgstr "Aelod o’ch teulu neu ffrind"
-
-msgid "Professional"
-msgstr "Gweithiwr proffesiynol"
-
-msgid "Legal adviser"
-msgstr "Cynghorydd Cyfreithiol"
-
-msgid "Other"
-msgstr "Arall"
-
-msgid "1st"
-msgstr "1af"
-
-msgid "2nd"
-msgstr "2il"
-
-msgid "3rd"
-msgstr "3ydd"
-
-msgid "4th"
-msgstr "4ydd"
-
-msgid "5th"
-msgstr "5ed"
-
-msgid "6th"
-msgstr "6ed"
-
-msgid "7th"
-msgstr "7fed"
-
-msgid "8th"
-msgstr "8fed"
-
-msgid "9th"
-msgstr "9fed"
-
-msgid "10th"
-msgstr "10fed"
-
-msgid "11th"
-msgstr "11eg"
-
-msgid "12th"
-msgstr "12fed"
-
-msgid "13th"
-msgstr "13eg"
-
-msgid "14th"
-msgstr "14eg"
-
-msgid "15th"
-msgstr "15fed"
-
-msgid "16th"
-msgstr "16eg"
-
-msgid "17th"
-msgstr "17eg"
-
-msgid "18th"
-msgstr "18fed"
-
-msgid "19th"
-msgstr "19eg"
-
-msgid "20th"
-msgstr "20fed"
-
-msgid "21st"
-msgstr "21ain"
-
-msgid "22nd"
-msgstr "22ain"
-
-msgid "23rd"
-msgstr "23ain"
-
-msgid "24th"
-msgstr "24ain"
-
-msgid "25th"
-msgstr "25ain"
-
-msgid "26th"
-msgstr "26ain"
-
-msgid "27th"
-msgstr "27ain"
-
-msgid "28th"
-msgstr "28ain"
-
-msgid "29th"
-msgstr "29ain"
-
-msgid "30th"
-msgstr "30ain"
-
-msgid "31st"
-msgstr "31ain"

@@ -176,8 +176,17 @@
             .replace("29th", "{{_('29th')}}")
             .replace("30th", "{{_('30th')}}")
             .replace("31st", "{{_('31st')}}")
+            .replace(" AM", " {{_('AM')}}")
             ;
       });
+      $("option").text(function () {
+          if ($(this).val() < 1730) {
+            return $(this).text().replace(" PM"," {{_('PM (afternoon)')}}")
+          } else if ($(this).val() > 1730) {
+            return $(this).text().replace(" PM"," {{_('PM (evening)')}}")
+          } else {
+            return $(this).text().replace("5:30 PM","5:30 {{_('PM (afternoon)')}}").replace("6:00 PM","6:00 {{_('PM (evening)')}}")
+          }
     }
   </script>
 
