@@ -41,6 +41,7 @@ def cookie_settings():
 
 @base.route("/privacy")
 def privacy():
+    raise Exception("deliberate fail")
     return render_template("privacy.html")
 
 
