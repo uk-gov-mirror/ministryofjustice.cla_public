@@ -312,6 +312,8 @@ var wideScreen = 641;
     if ($(window).width() >= wideScreen) {
       var listHeight = $("ul.org-list").height();
       if (listHeight > setHeight) setHeight = listHeight;
+      console.log("list height: " + listHeight);
+      console.log("set height: " + listHeight);
       $(".search-results-container, .search-results-list").height(setHeight);
     }
   }
