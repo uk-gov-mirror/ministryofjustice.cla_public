@@ -1,13 +1,13 @@
 {% if config["CLA_ENV"] == "dev" %}
 <a class="govuk-link" href="/start">
   <strong class="govuk-tag govuk-phase-banner__content__tag">
-    Development {{ date.fromtimestamp(time.time()) }}
+    Development
   </strong>
 </a>
 {% elif config["CLA_ENV"] == "staging" %}
 <a class="govuk-link" href="/start">
   <strong class="govuk-tag govuk-phase-banner__content__tag">
-    Staging {{ date.fromtimestamp(time.time()) }}
+    Staging
   </strong>
 </a>
 {% elif config["CLA_ENV"] != "production" %}
