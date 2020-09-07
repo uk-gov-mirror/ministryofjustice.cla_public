@@ -6,13 +6,14 @@ from cla_public.apps.scope.api import diagnosis_api_client as api
 from cla_public.libs.views import RequiresSession
 from flask import views, render_template, current_app, url_for, redirect, session
 
+{% set larpURL = "legal-adviser"+{{ '#' }}+"results" %}
 
 OUTCOME_URLS = {
     DIAGNOSIS_SCOPE.INSCOPE: ("checker.interstitial", {}, None),
     DIAGNOSIS_SCOPE.INELIGIBLE: ("scope.ineligible", None, "referred/help-organisations/scope"),
     DIAGNOSIS_SCOPE.OUTOFSCOPE: (
         "scope.ineligible",
-        {"category_name": "legal-adviser"+{{ '#' }}+"larp-results"},
+        {"category_name": larpURL},
         "referred/f2f/scope",
     ),
     DIAGNOSIS_SCOPE.MEDIATION: ("scope.ineligible", {"category_name": "mediation"}, "referred/mediation/scope"),
