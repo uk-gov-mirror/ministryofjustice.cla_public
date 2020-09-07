@@ -10,7 +10,11 @@ from flask import views, render_template, current_app, url_for, redirect, sessio
 OUTCOME_URLS = {
     DIAGNOSIS_SCOPE.INSCOPE: ("checker.interstitial", {}, None),
     DIAGNOSIS_SCOPE.INELIGIBLE: ("scope.ineligible", None, "referred/help-organisations/scope"),
-    DIAGNOSIS_SCOPE.OUTOFSCOPE: ("scope.ineligible", {"category_name": "legal-adviser#larp-results"}, "referred/f2f/scope"),
+    DIAGNOSIS_SCOPE.OUTOFSCOPE: (
+        "scope.ineligible",
+        {"category_name": "legal-adviser#larp-results"},
+        "referred/f2f/scope",
+    ),
     DIAGNOSIS_SCOPE.MEDIATION: ("scope.ineligible", {"category_name": "mediation"}, "referred/mediation/scope"),
     DIAGNOSIS_SCOPE.CONTACT: ("contact.get_in_touch", {}, "incomplete"),
 }
