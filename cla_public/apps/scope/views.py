@@ -6,7 +6,7 @@ from cla_public.apps.scope.api import diagnosis_api_client as api
 from cla_public.libs.views import RequiresSession
 from flask import views, render_template, current_app, url_for, redirect, session
 
-{% set larpURL = "legal-adviser"+{{ '#' }}+"results" %}
+set larpURL = "legal-adviser"+{{ '#' }}+"results"
 
 OUTCOME_URLS = {
     DIAGNOSIS_SCOPE.INSCOPE: ("checker.interstitial", {}, None),
