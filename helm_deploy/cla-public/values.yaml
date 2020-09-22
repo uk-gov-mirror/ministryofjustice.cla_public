@@ -37,6 +37,4 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-maintenanceMode: false
-
 envVars: []
