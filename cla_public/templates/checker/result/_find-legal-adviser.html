@@ -3,7 +3,7 @@
 
 {% if data and data.count and data.count > 0 %}
   <h1 class="govuk-heading-xl">
-    {{ title }}
+    {{ _('Legal adviser search results') }}
   </h1>
   <p id="larp-results" class="govuk-body">
     {% trans count=data.results|length %}Showing {{ count }} results around{% endtrans %}
@@ -152,9 +152,15 @@
     {% endcall %}
   {% endif %}
 
-  <h1 class="govuk-heading-xl">
-    {{ title }}
-  </h1>
+  {% if category == 'pi' %}
+    <h1 class="govuk-heading-xl">
+      {{ _('Legal aid is not usually available for advice about personal injury') }}
+    </h1>
+  {% else %}
+    <h1 class="govuk-heading-xl">
+      {{ _('A legal adviser may be able to help you') }}
+    </h1>
+  {% endif %}
 
   {% set find_legal_advisor_subtitle = _('Find a legal adviser') %}
 
