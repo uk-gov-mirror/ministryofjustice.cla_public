@@ -13,14 +13,11 @@
   {% if data.origin %}
     {% set title = _('Legal adviser search results') %}
   {% else %}
-    {% if category %}
-      {% if category == 'pi' %}
-        {% set title = _('Legal aid is not usually available for advice about personal injury') %}
-      {% else %}
-        {% set title = _('A legal adviser may be able to help you') %}
-      {% endif %}
+    {% if category == 'pi' %}
+      {% set title = _('Legal aid is not usually available for advice about personal injury') %}
     {% else %}
-    {% set title = _('Find a legal adviser') %}
+      {% set title = _('A legal adviser may be able to help you') %}
+    {% endif %}
   {% endif %}
 
   {% block page_title %}{{ title }} - {{ super() }}{% endblock %}
