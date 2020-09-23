@@ -55,6 +55,109 @@
     </fieldset>
   </div>
 {% endmacro %}
+{#
+  Renders address fieldset. Used for address entry.
+  Adapted from fieldset above
+
+  Params:
+    - field <object>
+        WTForm field (optional)
+    - class_ <string> (default: 'govuk-fieldset')
+        CSS class for fieldset element
+    - legend <string> (default: None)
+        Custom legend text (if field is not provided)
+    - attrs <object> (default: None)
+        Custom HTML attributes for fieldset element
+#}
+{% macro fieldset(field=None, class_='govuk-fieldset ', legend=None, field_attrs={}, hidden_legend_prefix=None) %}
+  {% set legend_ = field.label.text if field else legend %}
+  {% set controlled_by = kwargs.controlled_by %}
+  {% set control_value = kwargs.control_value if kwargs.control_value else '1' %}
+  {% set legend_size = kwargs.legend_size if kwargs.legend_size else 's' %}
+
+  <div class="govuk-form-group
+    {%- if field and field.errors %} govuk-form-group--error{% endif -%}
+    ">
+    <fieldset class="
+        {{- class_ -}}
+        {%- if controlled_by and control_value %} s-hidden{% endif -%}
+      "
+      {%- if kwargs.attrs %}{{ kwargs.attrs|xmlattr }}{% endif -%}
+      {% if controlled_by %}data-controlled-by="{{ controlled_by.name }}" data-control-value="{{ control_value }}"{% endif %}
+      {%- if field %}id="field-{{ field.id }}"{% endif -%}
+    >
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--{{ legend_size }}" {% if field %} id="field-label-{{ field.id }}"{% endif %}>
+        {% if field %}
+          {% if kwargs.custom_label %}
+            {% set label_text = _(kwargs.custom_label) %}
+          {% else %}
+            {% set label_text = field.label.text %}
+          {% endif %}
+
+          {% if field.flags.optional %}
+            {% set label_text = label_text + ' (' + _('optional') + ')' %}
+          {% endif %}
+
+          {% set field_label = field.label(
+               for=field.per_interval_value.id if field.per_interval_value else field.id,
+               text=label_text,
+               id="field-label-%s" % field.id,
+               class="govuk-label%s" % (' govuk-visually-hidden' if hide_label)
+             ) %}
+
+          {{ field_label }}
+        {% endif %}
+      </legend>
+
+      {{ render_field_description(field) }}
+      {{ render_field_errors(field.errors) if field and field.errors}}
+
+      {% if field.description %}
+        {% do field_attrs.update({'aria-describedby':field.name+'-hint'}) %}
+      {% endif %}
+      {{ field(**field_attrs) }}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="{{ field.name }}-address-line-1">
+          Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+        </label>
+        <input class="govuk-input" id="{{ field.name }}-address-line-1" name="{{ field.name }}-address-line-1" type="text" autocomplete="address-line1">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="{{ field.name }}-address-line-2">
+          <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+        </label>
+        <input class="govuk-input" id="{{ field.name }}-address-line-2" name="{{ field.name }}-address-line-2" type="text" autocomplete="address-line2">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="{{ field.name }}-address-town">
+          Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="{{ field.name }}-address-town" name="{{ field.name }}-address-town" type="text" autocomplete="address-level2">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="{{ field.name }}-address-county">
+          County
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="{{ field.name }}-address-county" name="{{ field.name }}-address-county" type="text">
+      </div>
+
+      {% if field or caller %}
+        <div class="{{ kwargs.row_class }}">
+          {% if field and not kwargs.field_as_label %}
+            {{ render_field(field, field_attrs) }}
+          {% endif %}
+          {% if caller %}
+            {{ caller() }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </fieldset>
+  </div>
+{% endmacro %}
 
 {% macro tickbox_fieldset(field=None, class_='govuk-fieldset ', legend=None, field_attrs={}) %}
   {% set legend_ = field.label.text if field else legend %}
