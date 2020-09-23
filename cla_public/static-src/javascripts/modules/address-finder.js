@@ -116,9 +116,9 @@
       } else {
         console.log(parts[parts.length-1]);
         parts.pop();  // strip postcode
-        console.log(parts[parts.length-2]);
+        console.log(parts[parts.length-1]);
         parts.pop();  // strip postcode
-        console.log(parts[parts.length-3]);
+        console.log(parts[parts.length-1]);
         parts.pop();  // strip postcode
         console.log(parts.join(';'));
       }
