@@ -100,9 +100,7 @@
           field_attrs={'class': 'govuk-input--width-10 cla-postcode-text', 'data-address-el': '#address-street_address', 'autocomplete': "postal-code", 'spellcheck': "false"},
           row_class='address-finder') }}
 
-      {{ Form.group(form.address.street_address,
-          'form-group-plain',
-          field_attrs={'rows': 4}) }}
+      {{ Form.addressFieldset(form.address.street_address) }}
     {% endcall %}
 
     {% set max_length_validator = form.extra_notes.validators|selectattr('max')|first %}

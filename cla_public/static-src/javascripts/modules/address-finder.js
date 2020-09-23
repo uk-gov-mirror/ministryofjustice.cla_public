@@ -96,8 +96,33 @@
 
     updateAddress: function (index) {
       var addr = this.addresses[index];
+      console.log(addr.formatted_address);
       var parts = addr.formatted_address.split('\n');
       parts.pop();  // strip postcode
+      if (parts.length <= 1) {
+        console.log("single length");
+      } else if (parts.length == 2) {
+        console.log(parts[0]);
+        console.log(parts[1]);
+      } else if (parts.length == 3) {
+        console.log(parts[0]);
+        console.log(parts[1]);
+        console.log(parts[2]);
+      } else if (parts.length == 4) {
+        console.log(parts[0]);
+        console.log(parts[1]);
+        console.log(parts[2]);
+        console.log(parts[3]);
+      } else {
+        console.log(parts[parts.length-1]);
+        parts.pop();  // strip postcode
+        console.log(parts[parts.length-2]);
+        parts.pop();  // strip postcode
+        console.log(parts[parts.length-3]);
+        parts.pop();  // strip postcode
+        console.log(parts.join(';'));
+      }
+
       this.$addressField.val(parts.join('\n')).focus();
     },
 
@@ -112,6 +137,7 @@
       // tidy up addresses for dropdown list
       $.each(addresses, function (i, addr) {
         var parts = addr.formatted_address.split('\n');
+        parts.pop();  // strip postcode
         var text = parts.join(', ');
         addrItems.push(text);
       });
