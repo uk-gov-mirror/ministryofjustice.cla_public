@@ -49,7 +49,7 @@
   <ul class="org-list">
     {% for org in organisations %}
       <li class="vcard {{ org.classname }}">
-        <h3 class="govuk-heading-m">
+        <h3 class="govuk-heading-s">
           {% set ga_event = 'event:%s/%s/%s' % ('External Link Clicked', 'click', org.service_name) %}
           {{ Element.link_same_window(org.website, org.service_name, is_external=True, **{'class': 'url', 'data-ga': ga_event}) }}
         </h3>
