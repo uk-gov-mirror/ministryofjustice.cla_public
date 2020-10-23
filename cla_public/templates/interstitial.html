@@ -44,6 +44,30 @@
                 <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
               </svg>
             </a>
+          </div>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="child" name="age" type="radio" value="child" data-aria-controls="under-eighteen">
+          <label class="govuk-label govuk-radios__label" for="contact-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="under-eighteen">
+          <div class="govuk-form-group">
+            <p class="govuk-body">
+              {% trans %}If you are under 18, you should contact CLA without completing the financial assessment.{% endtrans %}
+            </p>
+            <a class="govuk-button govuk-!-margin-top-2 govuk-button--start" href="{{ url_for('contact.get_in_touch') }}" role="button">
+              {{ _('Contact CLA') }}
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
   <p class="govuk-body">
     {{ _('If you do qualify financially, you’ll be able to speak to Civil Legal Advice (CLA),
     a national helpline for certain legal aid problems in England and Wales.') }}
@@ -60,30 +84,6 @@
     <li>{{ _('details of any benefits you receive') }}</li>
     <li>{{ _('mortgage statements and a current valuation for any property you own') }}</li>
   </ul>
-          </div>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="child" name="age" type="radio" value="child" data-aria-controls="under-eighteen">
-          <label class="govuk-label govuk-radios__label" for="contact-2">
-            No
-          </label>
-        </div>
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="under-eighteen">
-          <div class="govuk-form-group">
-            <p class="govuk-body">
-              {% trans %}If you are under 18, you should contact CLA without completing the financial assessment.{% endtrans %}
-            </p>
-            <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" href="{{ url_for('contact.get_in_touch') }}" role="button">
-              {{ _('Contact CLA') }}
-              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
-                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-  </div>
   <h2 class="govuk-heading-m">{% trans %}If you’re deaf or hard of hearing{% endtrans %}</h2>
   <p class="govuk-body">
     {% trans %}You can book a <a class="govuk-link" href="http://www.interpretingline.co.uk/vbooking.html">British Sign Language interpreter</a> by completing a request form.  Once complete, the operator will get back to you to complete the eligibility check and provide any further advice.{% endtrans %}
