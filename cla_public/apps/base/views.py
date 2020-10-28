@@ -54,6 +54,11 @@ def accessibility():
     return render_template("accessibility-statement.html")
 
 
+@base.route("/clear-cache")
+def clear_cache():
+    return render_template("clear-cache.html")
+
+
 class AbstractFeedbackView(AjaxOrNormalMixin, HasFormMixin, views.MethodView):
     """
     Abstract view for feedback forms
