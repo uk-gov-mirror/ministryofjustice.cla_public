@@ -105,21 +105,29 @@ jobs:
     steps:
       # Add the necessary steps to deploy your website.
       - checkout
-      - run: 
+      - run:
           name: Delete existing javascript packages
-          command: | 
+          command: |
             rm -rf node_modules package.json package-lock.json
       - puppeteer/install
-      - run: 
+      - run:
           name: Extract staging URL
-          command: | 
+          command: |
             source .circleci/define_build_environment_variables
             echo "export RELEASE_HOST=$CLEANED_BRANCH_NAME.$STAGING_HOST" >> $BASH_ENV
-      - run: 
+      - run:
           name: Install and run webhint
-          command: | 
+          command: |
             npm install --no-save hint
             node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/start
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/scope/diagnosis/n43n2
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/legal-aid-available
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/about
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/income
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/outgoings
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/review
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/result/eligible
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/result/confirmation
 
       - store_artifacts:
           path: ~/project/hint-report/
