@@ -119,14 +119,15 @@ jobs:
           name: Install and run webhint
           command: |
             npm install --no-save hint
-            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/start |
-            https://$RELEASE_HOST/scope/diagnosis/n43n2 |
-            https://$RELEASE_HOST/legal-aid-available |
-            https://$RELEASE_HOST/about |
-            https://$RELEASE_HOST/income |
-            https://$RELEASE_HOST/outgoings |
-            https://$RELEASE_HOST/review |
-            https://$RELEASE_HOST/result/eligible |
+            node node_modules/hint/dist/src/bin/hint.js
+            https://$RELEASE_HOST/start
+            https://$RELEASE_HOST/scope/diagnosis/n43n2
+            https://$RELEASE_HOST/legal-aid-available
+            https://$RELEASE_HOST/about
+            https://$RELEASE_HOST/income
+            https://$RELEASE_HOST/outgoings
+            https://$RELEASE_HOST/review
+            https://$RELEASE_HOST/result/eligible
             https://$RELEASE_HOST/result/confirmation
 
       - store_artifacts:
