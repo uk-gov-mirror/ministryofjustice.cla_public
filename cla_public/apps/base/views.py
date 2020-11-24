@@ -54,6 +54,11 @@ def accessibility():
     return render_template("accessibility-statement.html")
 
 
+@base.route("/unreasonable-behaviour-policy")
+def unreasonable():
+    return render_template("unreasonable-behaviour-policy.html")
+
+
 class AbstractFeedbackView(AjaxOrNormalMixin, HasFormMixin, views.MethodView):
     """
     Abstract view for feedback forms

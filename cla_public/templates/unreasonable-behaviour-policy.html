@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}{{ _('Unreasonable behaviour policy') }} - {{ super() }}{% endblock %}
+
+{% block inner_content %}
+  <h1 class="govuk-heading-xl">{{ _('Unreasonable behaviour policy') }}</h1>
+
+  <h2 class="govuk-heading-m">{{ _('Heading') }}</h2>
+  <p class="govuk-body">
+    {% trans %}The Legal Aid Agency (<abbr>LAA</abbr>) is responsible for the Civil Legal Advice (<abbr>CLA</abbr>) service.{% endtrans %}
+  </p>
+
+  <p class="govuk-body">
+    {% trans %}Innanríkisráðuneytið tók yfir málefni dómsmálaráðuneytisins þegar dómsmála- og mannréttindaráðuneytið var sameinað samgöngu- og sveitarstjórnarráðuneytinu árið 2011. Innanríkisráðuneytið var síðan klofið í dómsmálaráðuneytið og samgöngu- og sveitarstjórnarráðuneytið árið 2017.{% endtrans %}
+  </p>
+
+  <p class="govuk-body">
+    {% trans %}Undir innanríkisráðuneytinu starfaði stundum sér dómsmálaráðherra. Frá 27. ágúst til 4. desember 2014 var Sigmundur Davíð Gunnlaugsson starfandi dómsmálaráðherra jafnframt því að vera forsætisráðherra. Frá 11. janúar 2017 til 30. apríl 2017 var Sigríður Á. Andersen dómsmálaráðherra undir innanríkisráðuneytinu. Hún hélt því embætti þegar dómsmálaráðuneytið var aftur sett á laggirnar um mitt 2017.{% endtrans %}
+  </p>
+
+  {% include "checker/time-out-warning.html" %}
+{% endblock %}
