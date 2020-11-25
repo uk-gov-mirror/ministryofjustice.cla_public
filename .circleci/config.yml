@@ -116,13 +116,13 @@ jobs:
             source .circleci/define_build_environment_variables
             echo "export RELEASE_HOST=$CLEANED_BRANCH_NAME.$STAGING_HOST" >> $BASH_ENV
       - run:
-          name: Install and run webhint
+          name: Install webhint
           command: |
             npm install --no-save hint
-            node node_modules/hint/dist/src/bin/hint.js
-            https://$RELEASE_HOST/start
-            https://$RELEASE_HOST/scope/diagnosis/n43n2
-            https://$RELEASE_HOST/legal-aid-available
+      - run:
+          name: Run webhint
+          command: >
+            node node_modules/hint/dist/src/bin/hint.js https://$RELEASE_HOST/start https://$RELEASE_HOST/scope/diagnosis/n43n2 https://$RELEASE_HOST/legal-aid-available
             https://$RELEASE_HOST/about
             https://$RELEASE_HOST/income
             https://$RELEASE_HOST/outgoings
