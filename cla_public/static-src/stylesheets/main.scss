@@ -305,6 +305,12 @@ dl.govuk-list.govuk-list--bullet {
       padding-top:40px;
     }
 
+    @media only screen and (hover: none) {
+      ~ #skiplink-container {
+        padding-top:76px;
+      }
+    }
+
     ~ #skiplink-container {
       padding-top:40px;
     }
