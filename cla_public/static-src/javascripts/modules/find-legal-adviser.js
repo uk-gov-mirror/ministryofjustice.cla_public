@@ -54,14 +54,15 @@ map.addControl(new mapboxgl.NavigationControl({
 
 /*
 Method 2 (add markers)
-var marker1 = new mapboxgl.Marker({ color: '#38f' })
-  .setLngLat([ -0.09, 51.5 ])
-  .addTo(map);
-var marker2 = new mapboxgl.Marker({ color: '#38f' })
-  .setLngLat([ -2.968, 54.425 ])
-  .addTo(map);
+
 /**/
-  map.on('load', function() {
+$(".org-list-item").each(function(){
+  new mapboxgl.Marker({ color: '#38f' })
+    .setLngLat([ $(this).data('lon'), $(this).data('lat') ])
+    .addTo(map);
+});
+
+map.on('load', function() {
     map.addSource('geojson', {
         'type': 'geojson',
         'data': {
@@ -71,14 +72,7 @@ var marker2 = new mapboxgl.Marker({ color: '#38f' })
                     'type': 'Feature',
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [ -0.09, 51.5 ]
-                    }
-                },
-                {
-                    'type': 'Feature',
-                    'geometry': {
-                        'type': 'Point',
-                        'coordinates': [ -2.968, 54.425 ]
+                        'coordinates': [ 0.12, +mapLatitude ]
                     }
                 }
             ]
@@ -124,7 +118,7 @@ var marker2 = new mapboxgl.Marker({ color: '#38f' })
   });
 /**/
 
-//OLD 
+//OLD
 
 var wideScreen = 641;
  'use strict';
