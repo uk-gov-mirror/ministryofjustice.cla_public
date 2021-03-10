@@ -90,7 +90,9 @@ FORM_CONFIG_TRANSLATIONS = {code: config_path(code) for code, label in LANGUAGES
 
 TIMEZONE = "Europe/London"
 
-LAALAA_API_HOST = os.environ.get("LAALAA_API_HOST", "https://prod.laalaa.dsd.io")
+LAALAA_API_HOST = os.environ.get(
+    "LAALAA_API_HOST", "https://laa-legal-adviser-api-production.apps.live-1.cloud-platform.service.justice.gov.uk"
+)
 
 MAIL_SERVER = os.environ.get("SMTP_HOST")
 MAIL_PORT = os.environ.get("SMTP_PORT", 465)
