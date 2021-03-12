@@ -57,9 +57,12 @@ Method 2 (add markers)
 
 /**/
 $(".org-list-item").each(function(){
-  new mapboxgl.Marker({ color: '#38f' })
+  var itemInfo = $(this).html();
+  var marker = new mapboxgl.Marker({ color: '#38f' })
     .setLngLat([ $(this).data('lon'), $(this).data('lat') ])
     .addTo(map);
+  var popup = new mapboxgl.Popup({ offset: -50 }).setHTML(''+itemInfo);
+  marker.setPopup(popup);
 });
 
 map.on('load', function() {
@@ -72,7 +75,7 @@ map.on('load', function() {
                     'type': 'Feature',
                     'geometry': {
                         'type': 'Point',
-                        'coordinates': [ 0.12, +mapLatitude ]
+                        'coordinates': [ +mapLongitude, +mapLatitude ]
                     }
                 }
             ]
