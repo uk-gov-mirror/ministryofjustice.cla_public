@@ -57,6 +57,14 @@ Method 2 (add markers)
 
 /**/
 $(".org-list-item").each(function(){
+  $(this).on('click', function(e) {
+    var p0 = [ +mapLongitude, +mapLatitude ];
+    var p1 = [ $(this).data('lon'), $(this).data('lat') ];
+    var bbox = [p0, p1];
+    map.fitBounds(bbox, {
+      padding: {top: 10, bottom:25, left: 15, right: 5}
+    });
+  })
   var itemInfo = $(this).html();
   var marker = new mapboxgl.Marker({ color: '#38f' })
     .setLngLat([ $(this).data('lon'), $(this).data('lat') ])
